@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Content First Marathon | Athena CM</title>
+<style>
+:root{--orange:#ff5a2d;--ink:#101827;--muted:#667085;--line:#e6e8ed;--bg:#fff;--soft:#f7f8fa;--green:#13a45c;--max:1180px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.45}a{text-decoration:none;color:inherit}.w{width:min(var(--max),calc(100% - 36px));margin:auto}
+header{position:sticky;top:0;z-index:50;background:#ffffffed;backdrop-filter:blur(14px);border-bottom:1px solid #edf0f3}.nav{height:68px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:950;letter-spacing:-.045em}.brand b{color:var(--orange)}.links{display:flex;gap:28px;font-size:13px;font-weight:800}.pill{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:999px;border:1px solid var(--ink);font-weight:900}.pill.orange{background:var(--orange);border-color:var(--orange);color:#fff}
+.hero{position:relative;min-height:570px;overflow:hidden;background:#f7f8fa}.trackbg{position:absolute;inset:0 0 0 43%;background-image:linear-gradient(90deg,#f7f8fa 0%,rgba(247,248,250,.82) 8%,rgba(247,248,250,.08) 32%),url("content-first-marathon-kv.png");background-size:cover;background-position:center 30%;filter:saturate(.9)}
+.heroIn{position:relative;z-index:2;min-height:570px;display:flex;align-items:center}.copy{width:51%;padding:46px 0}.eye,.k{font-size:12px;font-weight:950;letter-spacing:.14em;text-transform:uppercase;color:var(--orange)}
+h1{font-size:clamp(64px,7.4vw,105px);line-height:.82;letter-spacing:-.075em;margin:17px 0 25px}h1 span{color:var(--orange)}.lead{font-size:18px;color:var(--muted);max-width:590px}.lead b{color:var(--ink)}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+.live{position:absolute;z-index:3;right:max(24px,calc((100vw - var(--max))/2));bottom:38px;width:410px;background:#fffef6eF;border:1px solid #fff;border-radius:22px;padding:20px;display:grid;grid-template-columns:repeat(3,1fr);box-shadow:0 18px 50px #1018271c}.metric{text-align:center;border-right:1px solid #e6e1dc}.metric:last-child{border:0}.metric strong{display:block;font-size:36px;color:var(--orange);letter-spacing:-.05em}.metric span{font-size:11px;color:var(--muted)}.metric small{display:block;color:var(--green);font-size:10px;margin-top:4px}
+.manifest{position:relative;z-index:5;margin-top:-18px}.manifestIn{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px 28px;box-shadow:0 10px 35px #1018270c;display:flex;align-items:center;justify-content:center;gap:26px}.routeIcon{font-size:31px}.manifest h3{margin:0;color:var(--orange);font-size:20px}.manifest p{margin:4px 0 0;font-weight:800}
+section{padding:68px 0}.title{text-align:center;margin-bottom:38px}.title h2,.head h2{font-size:clamp(35px,4.5vw,56px);line-height:.98;letter-spacing:-.055em;margin:8px 0}.title p,.head p{color:var(--muted)}
+.journey{display:grid;grid-template-columns:repeat(5,1fr);position:relative;gap:12px}.journey:before{content:"";position:absolute;left:8%;right:8%;top:39px;border-top:2px dashed #b9bec7}.stage{text-align:center;position:relative}.circle{position:relative;z-index:2;width:78px;height:78px;border:2px solid #aab0bb;background:#fff;border-radius:50%;display:grid;place-items:center;margin:auto;font-size:30px}.stage:first-child .circle{border-color:var(--orange);color:var(--orange);background:#fff4ef}.stageNo{font-size:12px;font-weight:950;margin-top:9px}.stage h3{font-size:14px;line-height:1.12;margin:4px auto;max-width:190px;min-height:31px;display:flex;align-items:center;justify-content:center}.stage b{font-size:12px}.stage p{font-size:12px;color:var(--muted);max-width:175px;margin:7px auto}
+.tactics{background:#fafafa}.head{display:grid;grid-template-columns:.75fr 1.25fr;gap:50px;align-items:end;margin-bottom:30px}.cards{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.card{background:#fff;border:1px solid var(--line);border-radius:15px;padding:20px;min-height:255px;display:flex;flex-direction:column}.card.new:before{content:"MỚI";align-self:flex-start;background:var(--orange);color:#fff;border-radius:6px;padding:3px 7px;font-size:9px;font-weight:950}.ci{font-size:37px;margin:15px 0}.card h3{font-size:16px;margin:0 0 8px}.card p{font-size:12px;color:var(--muted)}.points{margin-top:auto;color:var(--orange);font-weight:950;font-size:13px}.card.more{border-style:dashed;justify-content:center;text-align:center}.rule{text-align:center;color:var(--muted);font-size:11px;margin-top:14px}
+.dashboard{display:grid;grid-template-columns:1fr .75fr 1fr;gap:18px}.box{background:#f8f8f8;border-radius:18px;padding:24px}.box h3{font-size:23px;line-height:1.1;margin:0 0 18px}.tabs{display:flex;gap:7px;margin-bottom:12px}.tab{padding:8px 11px;border-radius:7px;background:#fff;font-size:10px;font-weight:850}.tab.active{background:var(--orange);color:#fff}.row{display:grid;grid-template-columns:27px 1fr auto;gap:9px;align-items:center;padding:10px 0;border-bottom:1px solid #e4e5e7}.rank{color:var(--orange);font-weight:950}.person b{font-size:13px}.person span{display:block;font-size:10px;color:var(--muted)}.score{font-weight:950}.join{background:linear-gradient(145deg,#ff6b37,#ff8a47);color:#fff;text-align:center}.join p{font-size:12px}.qr{width:150px;aspect-ratio:1;margin:18px auto;background:#fff;border-radius:12px;display:grid;place-items:center;color:var(--ink);border:8px solid #fff;box-shadow:inset 0 0 0 2px #111}.qr span{font-size:11px;font-weight:950}.join .pill{background:#111827;border-color:#111827;color:#fff}.rewardItem{background:#fff;border-radius:11px;padding:12px;display:grid;grid-template-columns:38px 1fr;gap:10px;align-items:center;margin:9px 0}.rewardItem i{font-style:normal;font-size:24px}.rewardItem b{font-size:13px}
+.datebar{padding:0 0 55px}.dateIn{border:1px solid var(--line);border-radius:16px;padding:18px 28px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:25px}.calendar{font-size:31px}.dateText b{font-size:17px}.dateText span{color:var(--muted);font-size:13px}.mobile{display:none}footer{padding:22px 0;color:var(--muted);font-size:11px}
+@media(max-width:930px){.links{display:none}.trackbg{left:0;opacity:.28}.copy{width:70%}.live{position:relative;right:auto;bottom:auto;margin:-45px auto 25px;width:min(92%,520px)}.hero{min-height:auto}.heroIn{min-height:590px}.head{grid-template-columns:1fr}.cards{grid-template-columns:repeat(2,1fr)}.cards .card:last-child{grid-column:1/-1}.dashboard{grid-template-columns:1fr}.journey{grid-template-columns:1fr}.journey:before{display:none}.stage{display:grid;grid-template-columns:85px 1fr;text-align:left;align-items:center}.stage p{margin:5px 0}.circle{grid-row:1/5;margin:0}}
+@media(max-width:600px){body{padding-bottom:72px}.nav>.pill{display:none}.heroIn{min-height:630px;align-items:flex-start}.copy{width:100%;padding-top:75px}.trackbg{opacity:.23;background-position:62% center}h1{font-size:61px}.lead{font-size:16px}.actions .pill{width:100%}.manifestIn{justify-content:flex-start}.cards{grid-template-columns:1fr}.cards .card:last-child{grid-column:auto}.card{min-height:auto}.dateIn{grid-template-columns:auto 1fr}.dateIn .pill{grid-column:1/-1}.mobile{display:block;position:fixed;z-index:60;left:9px;right:9px;bottom:9px;background:var(--orange);color:#fff;padding:15px;text-align:center;border-radius:15px;font-weight:950}section{padding:55px 0}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+.scoreRules{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:0 0 18px}
+.scoreRules>div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px}
+.scoreRules b{display:block;color:var(--orange);font-size:24px}.scoreRules span{font-size:11px;color:var(--muted)}
+.qrLive{cursor:pointer;text-decoration:none}.qrLive small{display:block;color:var(--muted);margin-top:5px}
+.syncStatus{position:fixed;right:12px;bottom:12px;z-index:70;background:#101827;color:#fff;padding:8px 11px;border-radius:999px;font-size:10px;opacity:.88}
+@media(max-width:700px){.scoreRules{grid-template-columns:1fr 1fr}.syncStatus{bottom:78px}}
+
+/* V4.2 Focus mode — compact central race hub */
+body{background:linear-gradient(180deg,#fff 0,#fffdf6 52%,#fff9e8 100%)}
+main{overflow:hidden}
+.hero{width:min(1180px,calc(100% - 40px));margin:34px auto 0;border-radius:34px;min-height:530px;box-shadow:0 24px 70px #10182716;border:1px solid #edf0f3}
+.heroIn{min-height:530px}.trackbg{border-radius:34px}
+.live{right:28px;bottom:28px;width:390px}
+.manifest{margin-top:18px}.manifestIn{max-width:940px;background:#fff9ee}
+section:not(.hero){padding:58px 0}
+#journey .w,#tactics .w{width:min(1040px,calc(100% - 40px))}
+#journey{padding-top:58px}
+.title{max-width:760px;margin-left:auto;margin-right:auto}
+.title h2{font-size:44px}
+.journey{gap:8px}
+.circle{width:68px;height:68px;font-size:26px}
+.journey:before{top:34px}
+.stage p{font-size:11px;line-height:1.5}
+.stage b{font-size:12px}
+.tactics{width:min(1080px,calc(100% - 40px));margin:0 auto 46px;border-radius:30px;background:linear-gradient(145deg,#fff6d7,#ffedb2);box-shadow:0 22px 65px #8a5d1514}
+.tactics .w{width:calc(100% - 54px)}
+.tactics .head{grid-template-columns:.8fr 1.2fr}
+.tactics .card{box-shadow:0 7px 20px #6b4a1510}
+.scoreRules>div{background:#fffdf8}
+.dashboard{width:min(1080px,calc(100% - 40px));margin:auto}
+.box{box-shadow:0 14px 38px #1018270b;border:1px solid #eceef1}
+.datebar .dateIn{max-width:1080px}
+@media(max-width:930px){.hero{width:calc(100% - 22px);margin-top:18px}.tactics{width:calc(100% - 22px)}}
+@media(max-width:600px){.hero{border-radius:22px}.trackbg{border-radius:22px}.tactics{border-radius:22px}.tactics .w{width:calc(100% - 28px)}}
+
+/* ===== V5 OFFICIAL KV THEME ===== */
+:root{
+  --orange:#ff5a00;
+  --yellow:#ffd400;
+  --race:#ff7a00;
+  --ink:#07090d;
+  --muted:#60646d;
+  --line:#e9e2d5;
+  --soft:#fff8df;
+}
+body{
+  background:#fffdf6;
+  color:var(--ink);
+}
+header{
+  background:rgba(7,9,13,.94);
+  border-bottom:1px solid rgba(255,212,0,.18);
+}
+.brand,.links a{color:#fff}
+.brand b{color:var(--yellow)}
+header .pill.orange{
+  color:#07090d;background:var(--yellow);border-color:var(--yellow);
+}
+.kvHero{
+  position:relative;
+  width:min(1180px,calc(100% - 40px));
+  min-height:720px;
+  margin:28px auto 0;
+  border-radius:34px;
+  overflow:hidden;
+  background:#090909;
+  border:0;
+  box-shadow:0 32px 80px rgba(80,38,0,.24);
+}
+.kvBackdrop{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(90deg,rgba(0,0,0,.82) 0%,rgba(0,0,0,.46) 36%,rgba(0,0,0,.04) 70%),
+    linear-gradient(0deg,rgba(0,0,0,.62) 0%,rgba(0,0,0,0) 45%),
+    url("content-first-marathon-kv.png") center 43%/cover no-repeat;
+}
+.kvHeroIn{position:relative;z-index:2;min-height:720px;align-items:flex-end}
+.kvCopy{width:47%;padding:0 0 74px;color:#fff}
+.kvCopy .eye{color:var(--yellow);font-size:11px}
+.kvMessage strong{
+  display:block;font-size:clamp(35px,4.4vw,60px);line-height:.92;
+  letter-spacing:-.055em;margin-top:16px;color:#fff;
+}
+.kvMessage p{max-width:510px;color:rgba(255,255,255,.78);font-size:16px}
+.srOnly{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.pill.orange{background:var(--yellow);border-color:var(--yellow);color:#090909}
+.pill.dark{background:#090909;border-color:#fff;color:#fff}
+.raceTelemetry{
+  background:rgba(7,9,13,.91);
+  border:1px solid rgba(255,212,0,.28);
+  color:#fff;
+  backdrop-filter:blur(14px);
+}
+.raceTelemetry .metric{border-right-color:rgba(255,255,255,.14)}
+.raceTelemetry .metric strong{color:var(--yellow)}
+.raceTelemetry .metric span{color:#fff}
+.raceTelemetry .metric small{color:#ffb000}
+.manifestIn{
+  background:#090909;color:#fff;border-color:#090909;
+  border-radius:18px;
+}
+.manifest h3{color:var(--yellow)}
+.manifest p{color:#fff}
+.routeIcon{filter:grayscale(1)}
+.title .k,.head .k{color:var(--orange)}
+.title h2,.head h2{font-weight:950}
+#journey{position:relative}
+#journey:before{
+  content:"";position:absolute;left:0;right:0;top:0;height:7px;
+  background:repeating-linear-gradient(90deg,#090909 0 34px,#ffd400 34px 68px);
+}
+.circle{
+  background:#090909;color:var(--yellow);border:0;
+  font-size:18px;font-weight:950;
+  box-shadow:0 0 0 6px #fff,0 0 0 8px #ff6a00;
+}
+.journey:before{border-top:3px solid #ff6a00}
+.stageNo{color:var(--orange)}
+.tactics{
+  background:
+    linear-gradient(135deg,rgba(255,212,0,.97),rgba(255,126,0,.96));
+  border:0;
+}
+.tactics .head p{color:#251800}
+.scoreRules>div,.tactics .card{border:0}
+.scoreRules b,.points{color:#e84900}
+.card.new:before{background:#090909;color:var(--yellow)}
+.dashboard .box{background:#fff}
+.join{
+  background:#090909!important;
+  color:#fff;
+  border:4px solid var(--yellow)!important;
+}
+.join .pill{background:var(--yellow);border-color:var(--yellow);color:#090909}
+.dateIn{
+  background:#090909;color:#fff;border:0!important;
+}
+.dateText span{color:#d9d9d9}
+.dateIn .pill.orange{background:var(--yellow);color:#090909}
+.syncStatus{background:#090909;border:1px solid var(--yellow);color:var(--yellow)}
+@media(max-width:930px){
+  .kvHero{min-height:680px}
+  .kvBackdrop{
+    background:
+      linear-gradient(0deg,rgba(0,0,0,.82),rgba(0,0,0,.05) 68%),
+      url("content-first-marathon-kv.png") center top/cover no-repeat;
+  }
+  .kvHeroIn{min-height:680px;align-items:flex-end}
+  .kvCopy{width:72%}
+  .raceTelemetry{position:relative;margin:-30px auto 28px;right:auto;bottom:auto}
+}
+@media(max-width:600px){
+  .kvHero{width:calc(100% - 20px);min-height:680px;border-radius:22px}
+  .kvHeroIn{min-height:680px}
+  .kvCopy{width:100%;padding-bottom:38px}
+  .kvMessage strong{font-size:38px}
+  .kvMessage p{font-size:14px}
+  .raceTelemetry{width:calc(100% - 30px);grid-template-columns:repeat(3,1fr)}
+  .metric strong{font-size:27px}
+  .metric span{font-size:9px}
+}
+
+</style></head><body>
+<header><nav class="w nav"><div class="brand"><b>CF</b> · CONTENT FIRST MARATHON</div><div class="links"><a href="#journey">5 chặng</a><a href="#tactics">Tactics</a><a href="#join">Tham gia</a><a href="#rank">Tiến độ</a><a href="#reward">Phần thưởng</a></div><a class="pill orange" href="https://t.me/ContentFirstMarathon_bot" target="_blank" rel="noopener">Đăng ký ngay →</a></nav></header>
+
+<main>
+<section class="hero kvHero">
+<div class="kvBackdrop"></div>
+<div class="w heroIn kvHeroIn">
+  <div class="kvCopy">
+    <div class="eye">ATHENA CM · CONTENT FIRST MARATHON · H2/2026</div>
+    <h1 class="srOnly">CONTENT FIRST MARATHON</h1>
+    <div class="kvMessage">
+      <strong>30 NGÀY BỀN BỈ.<br>BỨT PHÁ DOANH SỐ.</strong>
+      <p>Chuỗi đào tạo & thúc đẩy doanh số H2 — từ tư duy Content First đến hành động thực chiến trên đường đua.</p>
+    </div>
+    <div class="actions">
+      <a class="pill orange" href="https://t.me/ContentFirstMarathon_bot" target="_blank" rel="noopener">VÀO ĐƯỜNG ĐUA →</a>
+      <a class="pill dark" href="#journey">XEM 5 CHẶNG ↓</a>
+    </div>
+  </div>
+</div>
+<div class="live raceTelemetry">
+  <div class="metric"><strong id="metricRegistered">—</strong><span>Sale đã đăng ký</span><small id="metricRegisteredNote">Đang đồng bộ</small></div>
+  <div class="metric"><strong id="metricTraining">—</strong><span>Hoàn thành Training</span><small>Content First</small></div>
+  <div class="metric"><strong id="metricActions">—</strong><span>Tactic đã ghi nhận</span><small>Live race</small></div>
+</div>
+</section>
+
+<div class="manifest"><div class="w manifestIn"><div class="routeIcon">🏃</div><div><h3>TƯ DUY ĐÚNG. TRANG BỊ ĐỦ. BỨT PHÁ DOANH SỐ.</h3><p>5 chặng — 30 ngày — một đường đua Content First.</p></div></div></div>
+
+<section id="journey"><div class="w"><div class="title"><div class="k">THE MARATHON</div><h2>5 CHẶNG HÀNH TRÌNH</h2><p><b>Từ tư duy → sản phẩm → hành động → thành tích.</b><br>5 chặng để Sale trang bị đủ năng lực, bước vào đường đua và bứt tốc về đích.</p></div>
+<div class="journey">
+<div class="stage"><div class="circle">01</div><div class="stageNo">1</div><h3>MASTER THE MINDSET</h3><b>Nắm vững Content First</b><p>Làm chủ tư duy giải bài toán khách hàng.</p></div>
+<div class="stage"><div class="circle">02</div><div class="stageNo">2</div><h3>GEAR UP</h3><b>Trang bị sản phẩm mũi nhọn</b><p>Nắm chắc gói sản phẩm chiến lược để chốt deal.</p></div>
+<div class="stage"><div class="circle">03</div><div class="stageNo">3</div><h3>ENTER THE RACE</h3><b>Chính thức vào đường đua</b><p>Đăng ký mục tiêu và kích hoạt tích điểm.</p></div>
+<div class="stage"><div class="circle">04</div><div class="stageNo">4</div><h3>SCORE & ACCELERATE</h3><b>Tăng tốc tích điểm</b><p>Săn Sales Tactic, bứt phá BXH Realtime.</p></div>
+<div class="stage"><div class="circle">05</div><div class="stageNo">5</div><h3>FINISH & REWARD</h3><b>Về đích & Nhận thưởng</b><p>Chốt thành tích, vinh danh và nhận thưởng.</p></div>
+</div></div></section>
+
+<section class="tactics" id="tactics"><div class="w"><div class="head"><div><div class="k">RACE MISSIONS</div><h2>CÁC TACTIC TÍCH ĐIỂM</h2></div><p>Mỗi Tactic là một mốc doanh số. Tạo hành động thực tế để tích điểm ngay!</p></div>
+<div class="scoreRules">
+<div><b>+3</b><span>Chốt Product Marketing</span></div>
+<div><b>+5</b><span>Đạt chỉ tiêu doanh số</span></div>
+<div><b>+3</b><span>Mở nhãn hàng mới</span></div>
+<div><b>+2</b><span>Nhận Brief SP ưu tiên</span></div>
+<div><b>×2</b><span>Tactic đặc biệt</span></div>
+</div><div class="cards">
+<div class="card new"><div class="ci">🌟</div><h3>Bán sản phẩm mới<br>(Product Marketing)</h3><p>Chốt hợp đồng có sản phẩm Product Marketing.</p><div class="points">+3 điểm</div></div>
+<div class="card"><div class="ci">🎯</div><h3>Đăng ký & đạt chỉ tiêu doanh số</h3><p>Bứt phá giới hạn — Hoàn thành 100% mục tiêu doanh số chiến dịch bạn đã cam kết.</p><div class="points">+5 điểm</div></div>
+<div class="card"><div class="ci">🤝</div><h3>Mở nhãn hàng mới</h3><p>Chốt hợp đồng với nhãn hàng/khách hàng mới.</p><div class="points">+3 điểm</div></div>
+<div class="card"><div class="ci">📣</div><h3>Nhận Brief SP ưu tiên</h3><p>Mang về Brief hợp lệ cho sản phẩm ưu tiên.</p><div class="points">+2 điểm</div></div>
+<div class="card more"><div class="ci">🎁</div><h3>Khám phá Tactic mới</h3><p>Đón chờ các thử thách nhân đôi điểm thưởng tiếp theo!</p></div>
+</div><div class="rule">💡 Luật chơi chi tiết sẽ được công bố tại Kick-off.</div></div></section>
+
+<section id="rank"><div class="w dashboard">
+<div class="box"><h3>BẢNG XẾP HẠNG TOP SALE</h3><div class="tabs"><span class="tab active">TOP ĐIỂM</span><span class="tab">TOP TĂNG TỐC</span></div>
+<div id="leaderboardRows"><p class="muted">Đang tải bảng xếp hạng…</p></div></div>
+
+<div class="box join" id="join"><h3>CẬP NHẬT KẾT QUẢ<br>QUA TELEGRAM BOT</h3><p>Quét QR để chọn thử thách, đăng ký mục tiêu và cập nhật doanh số realtime mọi lúc mọi nơi!</p><a class="qr qrLive" href="https://t.me/ContentFirstMarathon_bot" target="_blank" rel="noopener"><span>@ContentFirstMarathon_bot<br><small>Nhấn để mở Bot</small></span></a><a class="pill" href="https://t.me/ContentFirstMarathon_bot" target="_blank" rel="noopener">✈ Mở Telegram Bot</a><p>{Hướng dẫn chi tiết →}</p></div>
+
+<div class="box" id="reward"><h3>PHẦN THƯỞNG<br>CHO NGƯỜI VỀ ĐÍCH</h3>
+<div class="rewardItem"><i>🏅</i><b>Chứng nhận Core Sale<br>Content First Marathon</b></div>
+<div class="rewardItem"><i>🎁</i><b>Phần thưởng dành cho Top Sale<br>{BTC bổ sung}</b></div>
+<div class="rewardItem"><i>⭐</i><b>Cơ hội trở thành Core Sale nòng cốt</b></div>
+<div class="rewardItem"><i>🚀</i><b>Ưu tiên tham gia các dự án chiến lược Q4</b></div></div>
+</div></section>
+
+<div class="datebar"><div class="w dateIn"><div class="calendar">🗓️</div><div class="dateText"><b>BẮT ĐẦU: 12/8/2026　 |　 KẾT THÚC: 15/9/2026</b><br><span>1 tháng bứt phá — Thay đổi tư duy — Tạo kết quả thật.</span></div><a class="pill orange" href="#join">ĐĂNG KÝ NGAY →</a></div></div>
+</main><footer><div class="w">Athena CM · Content First Marathon · Prototype V3. Thay QR, link bot, tactic/điểm và dữ liệu BXH bằng dữ liệu đã duyệt trước khi phát hành.</div></footer>
+<a class="mobile" href="#join">ĐĂNG KÝ NGAY →</a>
+
+<div class="syncStatus" id="syncStatus">DATA · chưa nối API</div>
+<script>
+const CFM = {
+  API_URL: "", // CẦN WEB APP DEPLOYMENT URL KẾT THÚC /exec; link project editor không dùng làm API được
+  BOT_URL: "https://t.me/ContentFirstMarathon_bot",
+  REFRESH_MS: 60000
+};
+
+function esc(v){return String(v ?? "").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));}
+function setText(id,v){const e=document.getElementById(id); if(e)e.textContent=v;}
+function renderLeaderboard(rows){
+  const el=document.getElementById("leaderboardRows"); if(!el)return;
+  if(!rows || !rows.length){el.innerHTML='<p class="muted">Chưa có dữ liệu BXH.</p>';return;}
+  el.innerHTML=rows.slice(0,5).map((r,i)=>`
+    <div class="row">
+      <div class="rank">${i+1}</div>
+      <div class="person"><b>${esc(r.name)}</b><span>${esc(r.team||"")}</span></div>
+      <div class="score">${esc(r.score)}đ</div>
+    </div>`).join("");
+}
+async function loadCFM(){
+  const status=document.getElementById("syncStatus");
+  if(!CFM.API_URL){status.textContent="DATA · cần URL Apps Script";return;}
+  try{
+    status.textContent="DATA · đang đồng bộ…";
+    const res=await fetch(CFM.API_URL+"?t="+Date.now(),{cache:"no-store"});
+    if(!res.ok) throw new Error("HTTP "+res.status);
+    const d=await res.json();
+    setText("metricRegistered",d.metrics?.registered ?? 0);
+    setText("metricTraining",d.metrics?.completedTraining ?? 0);
+    setText("metricActions",d.metrics?.tacticsRecorded ?? 0);
+    setText("metricRegisteredNote","Cập nhật tự động");
+    renderLeaderboard(d.leaderboard||[]);
+    status.textContent="DATA · cập nhật "+new Date().toLocaleTimeString("vi-VN",{hour:"2-digit",minute:"2-digit"});
+  }catch(e){
+    console.error(e); status.textContent="DATA · lỗi đồng bộ";
+  }
+}
+loadCFM();
+setInterval(loadCFM,CFM.REFRESH_MS);
+</script>
+</body></html>
