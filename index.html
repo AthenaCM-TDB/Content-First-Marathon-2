@@ -179,15 +179,28 @@ header .pill.orange{
   .raceTelemetry{width:calc(100% - 30px);grid-template-columns:repeat(3,1fr)}
   .metric strong{font-size:27px}
   .metric span{font-size:9px}
+  .kvBackdrop{background:linear-gradient(0deg,rgba(0,0,0,.80),rgba(0,0,0,.04) 62%),url("content-first-marathon-kv.png") center top/contain no-repeat;background-color:#0b0b0b}
+  .kvHero{overflow:hidden}
 }
 
 /* ===== V6 SALES RACE ===== */
 .tactics .cards{grid-template-columns:repeat(4,1fr)}
 .tactics .card{min-height:235px}
 .tactics .points{font-size:18px}
-.brandLogo{display:flex;align-items:center;gap:10px}.athenaMark{width:30px;height:30px;border-radius:8px;background:var(--yellow);color:#090909;display:grid;place-items:center;font-weight:950;font-size:12px;letter-spacing:-.04em}.raceNote{margin-top:15px;text-align:right;font-size:11px;font-weight:800;color:#4a3100}.phaseBridge{max-width:940px;margin:22px auto 0;display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:center}.phase{border:1px solid var(--line);border-radius:16px;padding:16px 18px;background:#fff}.phase b{display:block;font-size:13px}.phase span{font-size:11px;color:var(--muted)}.phaseArrow{font-size:22px;color:var(--orange);font-weight:950}
+.brandLogo{display:flex;align-items:center;gap:10px}.athenaMark{width:30px;height:30px;border-radius:8px;background:var(--yellow);color:#090909;display:grid;place-items:center;font-weight:950;font-size:12px;letter-spacing:-.04em}.raceNote{margin-top:15px;text-align:right;font-size:11px;font-weight:800;color:#4a3100}
+.phaseBridge{max-width:940px;margin:28px auto 12px;display:grid;grid-template-columns:1fr 72px 1fr;gap:0;align-items:stretch;background:#090909;border-radius:24px;overflow:hidden;box-shadow:0 18px 48px rgba(0,0,0,.14);border:1px solid #202020}
+.phase{position:relative;border:0;border-radius:0;padding:22px 24px;background:#090909;color:#fff;overflow:hidden}
+.phase:after{content:"";position:absolute;inset:auto -30px -50px auto;width:130px;height:130px;border:22px solid rgba(255,212,0,.08);border-radius:50%}
+.phase.racePhase{background:linear-gradient(135deg,#ff5a00,#ff8a00);color:#090909}
+.phase .phaseTop{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
+.phase b{display:block;font-size:15px;letter-spacing:.02em}.phase span{font-size:11px;color:#b8b8b8}.phase.racePhase span{color:#3d2400}
+.phaseFlag{font-size:10px;font-weight:950;padding:6px 9px;border-radius:999px;background:var(--yellow);color:#090909;white-space:nowrap}
+.racePhase .phaseFlag{background:#090909;color:var(--yellow)}
+.phaseClock{display:flex;align-items:flex-end;gap:8px;margin-top:10px}.clockNum{font-size:42px;line-height:.85;font-weight:950;letter-spacing:-.055em;color:var(--yellow);font-variant-numeric:tabular-nums}.racePhase .clockNum{color:#090909}.clockUnit{font-size:10px;font-weight:900;letter-spacing:.08em;padding-bottom:3px}.phaseMeta{display:block!important;margin-top:12px;font-size:11px!important;line-height:1.5}
+.phaseArrow{display:grid;place-items:center;background:var(--yellow);color:#090909;font-size:26px;font-weight:950;position:relative}.phaseArrow:before,.phaseArrow:after{content:"";position:absolute;left:50%;width:2px;height:28%;background:#090909;opacity:.22}.phaseArrow:before{top:0}.phaseArrow:after{bottom:0}
+
 @media(max-width:930px){.tactics .cards{grid-template-columns:repeat(2,1fr)}.tactics .cards .card:last-child{grid-column:auto}}
-@media(max-width:600px){.tactics .cards{grid-template-columns:1fr}}
+@media(max-width:600px){.tactics .cards{grid-template-columns:1fr}.phaseBridge{grid-template-columns:1fr;margin-top:22px;border-radius:20px}.phaseArrow{height:46px}.phaseArrow:before,.phaseArrow:after{display:none}.phase{padding:20px}.clockNum{font-size:38px}}
 
 /* ===== V6.2 MOTION SYSTEM ===== */
 html{scroll-behavior:smooth}
@@ -234,7 +247,11 @@ html{scroll-behavior:smooth}
 
 <div class="manifest"><div class="w manifestIn"><div class="routeIcon">🏃</div><div><h3>TRANG BỊ 30 NGÀY. BỨT TỐC ĐẾN CUỐI H2.</h3><p>Giai đoạn 1: Training 12/8–15/9 · Giai đoạn 2: Race 16/9–31/12/2026.</p></div></div></div>
 
-<section id="journey"><div class="w"><div class="title"><div class="k">TRAINING PHASE · 12/8–15/9</div><h2>5 BUỔI TRANG BỊ CONTENT FIRST</h2><p><b>Từ tư duy → sản phẩm → năng lực thực chiến.</b><br>5 buổi học là giai đoạn trang bị trước Race — không phải 5 chặng của cuộc đua.</p></div><div class="phaseBridge"><div class="phase"><b>01 · TRAINING</b><span>12/8–15/9 · 5 buổi Content First & sản phẩm</span></div><div class="phaseArrow">→</div><div class="phase"><b>02 · SALES RACE</b><span>16/9–31/12 · Thực chiến, tích KM, bứt tốc doanh số</span></div></div>
+<section id="journey"><div class="w"><div class="title"><div class="k">TRAINING PHASE · 12/8–15/9</div><h2>5 BUỔI TRANG BỊ CONTENT FIRST</h2><p><b>Từ tư duy → sản phẩm → năng lực thực chiến.</b><br>5 buổi học là giai đoạn trang bị trước Race — không phải 5 chặng của cuộc đua.</p></div><div class="phaseBridge">
+<div class="phase trainingPhase"><div class="phaseTop"><b>01 · TRAINING</b><em class="phaseFlag">ĐANG TRANG BỊ</em></div><div class="phaseClock"><strong class="clockNum" id="trainingClock">30</strong><small class="clockUnit">NGÀY TRAINING</small></div><span class="phaseMeta">12/8–15/9 · 5 buổi Content First & sản phẩm<br>Hoàn thiện hành trang trước giờ xuất phát.</span></div>
+<div class="phaseArrow">→</div>
+<div class="phase racePhase"><div class="phaseTop"><b>02 · SALES RACE</b><em class="phaseFlag" id="raceFlag">COUNTDOWN</em></div><div class="phaseClock"><strong class="clockNum" id="raceCountdown">--</strong><small class="clockUnit" id="raceCountdownUnit">NGÀY TỚI RACE</small></div><span class="phaseMeta">16/9–31/12 · Thực chiến, tích KM, bứt tốc doanh số<br>Đồng hồ bắt đầu chạy ngay khi Race mở.</span></div>
+</div>
 <div class="journey">
 <div class="stage"><div class="circle">01</div><div class="stageNo">1</div><h3>BUỔI 1 · CONTENT FIRST MINDSET</h3><b>Nắm tư duy Content First</b><p>Làm chủ tư duy giải bài toán khách hàng.</p></div>
 <div class="stage"><div class="circle">02</div><div class="stageNo">2</div><h3>BUỔI 2 · PRODUCT GEAR</h3><b>Nắm sản phẩm & giải pháp mũi nhọn</b><p>Nắm chắc gói sản phẩm chiến lược để chốt deal.</p></div>
@@ -275,7 +292,7 @@ html{scroll-behavior:smooth}
 <script>
 const CFM = {
   CASH_PER_POINT: 10000,
-  API_URL: "", // CẦN WEB APP DEPLOYMENT URL KẾT THÚC /exec; link project editor không dùng làm API được
+  API_URL: "https://script.google.com/macros/s/AKfycbyj_RTJnkvhca0oDewH7Am0IgPZ3G1shV2G4wq2N8mNAGXd7frMo49qW5LgVVp2g1fWSg/exec", // Web App /exec đang dùng cho CFM Bot
   BOT_URL: "https://t.me/ContentFirstMarathon_bot",
   REFRESH_MS: 60000
 };
@@ -363,6 +380,23 @@ window.addEventListener('DOMContentLoaded',()=>{
   initReveal();
   setTimeout(animateVisibleNumbers,180);
 });
+
+function updateRaceClock(){
+  const now=new Date();
+  const start=new Date(2026,8,16,0,0,0);
+  const finish=new Date(2026,11,31,23,59,59);
+  const num=document.getElementById("raceCountdown");
+  const unit=document.getElementById("raceCountdownUnit");
+  const flag=document.getElementById("raceFlag");
+  if(!num)return;
+  if(now < start){
+    num.textContent=Math.max(0,Math.ceil((start-now)/86400000)); unit.textContent="NGÀY TỚI RACE"; flag.textContent="COUNTDOWN";
+  }else if(now <= finish){
+    num.textContent=Math.max(0,Math.ceil((finish-now)/86400000)); unit.textContent="NGÀY TỚI ĐÍCH"; flag.textContent="RACE LIVE";
+  }else{ num.textContent="FINISH"; unit.textContent="H2/2026"; flag.textContent="ĐÃ VỀ ĐÍCH"; }
+}
+updateRaceClock();
+setInterval(updateRaceClock,60000);
 loadCFM();
 setInterval(loadCFM,CFM.REFRESH_MS);
 </script>
