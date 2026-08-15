@@ -337,15 +337,26 @@ html{scroll-behavior:smooth}
 <div class="syncStatus" id="syncStatus">DATA · chưa nối API</div>
 <script>
 const CFM = {
-  CASH_PER_POINT: 10000,
-  API_URL: "https://script.google.com/macros/s/AKfycbyj_RTJnkvhca0oDewH7Am0IgPZ3G1shV2G4wq2N8mNAGXd7frMo49qW5LgVVp2g1fWSg/exec", // Web App /exec đang dùng cho CFM Bot
+  CASH_PER_KM: 100000, // 1 KM = 100.000 VNĐ
+  API_URL: "https://script.google.com/macros/s/AKfycbya8viXnKhyMmBp73l2qO-CqVOZcXbZEcYbA2ez0LOh_MQxntPrjlC0h9pptgeclzutJw/exec", // Web App /exec đang dùng cho CFM Bot
   BOT_URL: "https://t.me/ContentFirstMarathon_bot",
   REFRESH_MS: 60000
 };
 
 function esc(v){return String(v ?? "").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));}
 function setText(id,v){const e=document.getElementById(id); if(e)e.textContent=v;}
-function formatKM(score){const km=Number(score||0)/10; return (Number.isInteger(km)?km:km.toFixed(1))+"KM";}
+function scoreToKM(score){
+  // Adapter tạm thời cho Sheet hiện tại: 10 score cũ = 1 KM.
+  // Khi Sheet chuyển sang lưu KM trực tiếp, chỉ cần đổi hàm này thành Number(score||0).
+  return Number(score||0)/10;
+}
+function formatKMValue(km){
+  km=Number(km||0);
+  if(km>0 && km<1) return Math.round(km*1000)+"M";
+  return (Number.isInteger(km)?km:km.toFixed(1))+"KM";
+}
+function formatKM(score){return formatKMValue(scoreToKM(score));}
+function formatCashFromKM(km){return Math.round(Number(km||0)*CFM.CASH_PER_KM).toLocaleString("vi-VN")+"đ";}
 function renderLeaderboard(rows){
   const el=document.getElementById("leaderboardRows"); if(!el)return;
   if(!rows || !rows.length){el.innerHTML='<p class="muted">Chưa có dữ liệu BXH.</p>';return;}
@@ -353,7 +364,7 @@ function renderLeaderboard(rows){
     <div class="row">
       <div class="rank">${i+1}</div>
       <div class="person"><b>${esc(r.name)}</b><span>${esc(r.team||"")}</span></div>
-      <div class="score">${esc((Number(r.rewardValue ?? (Number(r.score||0)*10000))/1000).toLocaleString("vi-VN"))}K</div>
+      <div class="score"><b>${esc(formatKM(r.score))}</b><span style="display:block;font-size:9px;font-weight:700;color:#6b7280;margin-top:2px">≈ ${esc(formatCashFromKM(scoreToKM(r.score)))}</span></div>
     </div>`).join("");
   setTimeout(animateVisibleNumbers,40);
 }
