@@ -264,6 +264,19 @@ html{scroll-behavior:smooth}
   .phaseFlag{font-size:9px!important}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.athenaMark{animation:none}.tactics .card,.box,.phase,.rewardItem,.metric,.pill{transition:none}}
+
+/* ===== V6.6 PHASE AIR + LEADERBOARD POLISH ===== */
+.phaseBridge{max-width:940px;background:transparent;border:0;box-shadow:none;overflow:visible;grid-template-columns:minmax(0,1fr) 72px minmax(0,1fr);gap:22px;align-items:stretch}
+.phase{border-radius:24px;box-shadow:0 16px 42px rgba(15,23,42,.10);border:1px solid rgba(0,0,0,.08);min-height:174px}
+.phaseArrow{border-radius:20px;min-height:174px;box-shadow:0 12px 30px rgba(255,212,0,.22)}
+.phaseArrow:before,.phaseArrow:after{display:none}
+.phase.trainingPhase{border-color:#202020}
+.phase.racePhase{border-color:#ff6a00}
+@media(max-width:700px){
+ .phaseBridge{grid-template-columns:1fr;gap:14px;margin-left:4px;margin-right:4px}
+ .phase{min-height:0;border-radius:20px;padding:20px 18px}
+ .phaseArrow{height:42px;min-height:42px;border-radius:14px;transform:rotate(90deg);width:42px;justify-self:center}
+}
 </style></head><body>
 <header><nav class="w nav"><div class="brand brandLogo"><span class="athenaMark">A</span><span>ATHENA CM · <b>CONTENT FIRST MARATHON</b></span></div><div class="links"><a href="#journey">5 chặng</a><a href="#tactics">Tactics</a><a href="#join">Tham gia</a><a href="#rank">Tiến độ</a><a href="#reward">Phần thưởng</a></div><a class="pill orange" href="https://t.me/ContentFirstMarathon_bot" target="_blank" rel="noopener">Đăng ký ngay →</a></nav></header>
 
@@ -293,7 +306,7 @@ html{scroll-behavior:smooth}
 
 <div class="manifest"><div class="w manifestIn"><div class="routeIcon">🏃</div><div><h3>TRANG BỊ 30 NGÀY. BỨT TỐC ĐẾN CUỐI H2.</h3><p>Giai đoạn 1: Training 12/8–15/9 · Giai đoạn 2: Race 16/9–31/12/2026.</p></div></div></div>
 
-<section id="journey"><div class="w"><div class="title"><div class="k">TRAINING PHASE · 12/8–15/9</div><h2>5 BUỔI TRANG BỊ CONTENT FIRST</h2><p><b>Từ tư duy → sản phẩm → năng lực thực chiến.</b><br>5 buổi trang bị SẴN SÀNG trước Race — SẴN SÀNG BỨT PHÁ</p></div><div class="phaseBridge">
+<section id="journey"><div class="w"><div class="title"><div class="k">TRAINING PHASE · 12/8–15/9</div><h2>5 BUỔI TRANG BỊ CONTENT FIRST</h2><p><b>Từ tư duy → sản phẩm → năng lực thực chiến.</b><br>Trang bị trước Race — SẴN SÀNG BỨT PHÁ</p></div><div class="phaseBridge">
 <div class="phase trainingPhase"><div class="phaseTop"><b>01 · TRAINING</b><em class="phaseFlag">ĐANG DIỄN RA</em></div><div class="phaseClock"><strong class="clockNum" id="trainingClock">30</strong><small class="clockUnit">NGÀY TRAINING</small></div><span class="phaseMeta">12/8–15/9 · 5 buổi Content First & sản phẩm<br>Hoàn thiện hành trang trước giờ xuất phát.</span></div>
 <div class="phaseArrow">→</div>
 <div class="phase racePhase"><div class="phaseTop"><b>02 · SALES RACE</b><em class="phaseFlag" id="raceFlag">COUNTDOWN</em></div><div class="phaseClock"><strong class="clockNum" id="raceCountdown">--</strong><small class="clockUnit" id="raceCountdownUnit">NGÀY TỚI RACE</small></div><span class="phaseMeta">16/9–31/12 · Thực chiến, tích KM, bứt tốc doanh số<br>Đếm ngược tới khi chặng đua kết thúc 31/12.</span></div>
@@ -324,10 +337,10 @@ html{scroll-behavior:smooth}
 <div class="box join" id="join"><h3>CẬP NHẬT KẾT QUẢ<br>QUA TELEGRAM BOT</h3><p>Quét mã QR để đăng ký thử thách và cập nhật doanh số realtime.</p><a class="qr qrLive" href="https://t.me/ContentFirstMarathon_bot" target="_blank" rel="noopener"><span>@ContentFirstMarathon_bot<br><small>Nhấn để mở Bot</small></span></a><a class="pill" href="https://t.me/ContentFirstMarathon_bot" target="_blank" rel="noopener">✈ Mở Telegram Bot</a><p>{Hướng dẫn chi tiết →}</p></div>
 
 <div class="box" id="reward"><h3>PHẦN THƯỞNG<br>CHO NGƯỜI VỀ ĐÍCH</h3>
-<div class="rewardItem"><i>🏅</i><b>Chứng nhận Core Sale<br>Content First Marathon</b></div>
-<div class="rewardItem"><i>🎁</i><b>Phần thưởng dành cho Top Sale<br>{BTC bổ sung}</b></div>
+<div class="rewardItem"><i>🏅</i><b>Certificate Sale Content First</b></div>
+<div class="rewardItem"><i>🎁</i><b>Phần thưởng dành cho Top Sale</b></div>
 <div class="rewardItem"><i>⭐</i><b>Cơ hội trở thành Core Sale nòng cốt</b></div>
-<div class="rewardItem"><i>🚀</i><b>Ưu tiên tham gia các dự án chiến lược Q4</b></div></div>
+<div class="rewardItem"><i>🚀</i><b>Ưu tiên tham gia các dự án chiến lược</b></div></div>
 </div></section>
 
 <div class="datebar"><div class="w dateIn"><div class="calendar">🗓️</div><div class="dateText"><b>TRAINING: 12/8–15/9/2026　 |　 SALES RACE: 16/9–31/12/2026</b><br><span>Trang bị sẵn sàng - bứt tốc ngay!</span></div><a class="pill orange" href="#join">ĐĂNG KÝ NGAY →</a></div></div>
@@ -357,13 +370,34 @@ function formatKMValue(km){
 }
 function formatKM(score){return formatKMValue(scoreToKM(score));}
 function formatCashFromKM(km){return Math.round(Number(km||0)*CFM.CASH_PER_KM).toLocaleString("vi-VN")+"đ";}
-function renderLeaderboard(rows){
+function buildNameMap(d){
+  const map={"106492":"Trần Duy Hải"}; // fallback hiện tại; API/Sheet vẫn được ưu tiên
+  const pools=[d?.users,d?.masterList,d?.participants,d?.sales];
+  pools.forEach(list=>{
+    if(!Array.isArray(list)) return;
+    list.forEach(u=>{
+      const id=String(u?.mns ?? u?.MNS ?? u?.id ?? u?.code ?? "").trim();
+      const name=u?.hoTen ?? u?.HoTen ?? u?.fullName ?? u?.name ?? u?.saleName;
+      if(id && name && String(name).trim()!==id) map[id]=String(name).trim();
+    });
+  });
+  return map;
+}
+function saleDisplayName(r,nameMap){
+  const id=String(r?.mns ?? r?.MNS ?? r?.id ?? r?.code ?? r?.name ?? "").trim();
+  const direct=r?.hoTen ?? r?.HoTen ?? r?.fullName ?? r?.saleName;
+  if(direct && String(direct).trim()!==id) return String(direct).trim();
+  if(nameMap?.[id]) return nameMap[id];
+  if(r?.name && !/^\d+$/.test(String(r.name).trim())) return String(r.name).trim();
+  return id || "Sale";
+}
+function renderLeaderboard(rows,nameMap={}){
   const el=document.getElementById("leaderboardRows"); if(!el)return;
   if(!rows || !rows.length){el.innerHTML='<p class="muted">Chưa có dữ liệu BXH.</p>';return;}
   el.innerHTML=rows.slice(0,5).map((r,i)=>`
     <div class="row">
       <div class="rank">${i+1}</div>
-      <div class="person"><b>${esc(r.name)}</b><span>${esc(r.team||"")}</span></div>
+      <div class="person"><b>${esc(saleDisplayName(r,nameMap))}</b><span>${esc(r.team||"")}</span></div>
       <div class="score"><b>${esc(formatKM(r.score))}</b><span style="display:block;font-size:9px;font-weight:700;color:#6b7280;margin-top:2px">≈ ${esc(formatCashFromKM(scoreToKM(r.score)))}</span></div>
     </div>`).join("");
   setTimeout(animateVisibleNumbers,40);
@@ -380,7 +414,7 @@ async function loadCFM(){
     setText("metricTraining",d.metrics?.completedTraining ?? 0);
     setText("metricActions",d.metrics?.tacticsRecorded ?? 0);
     setText("metricRegisteredNote","Cập nhật tự động");
-    renderLeaderboard(d.leaderboard||[]);
+    renderLeaderboard(d.leaderboard||[],buildNameMap(d));
     status.textContent="DATA · cập nhật "+new Date().toLocaleTimeString("vi-VN",{hour:"2-digit",minute:"2-digit"});
   }catch(e){
     console.error(e); status.textContent="DATA · lỗi đồng bộ";
