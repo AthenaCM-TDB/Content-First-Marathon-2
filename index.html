@@ -277,8 +277,25 @@ html{scroll-behavior:smooth}
  .phase{min-height:0;border-radius:20px;padding:20px 18px}
  .phaseArrow{height:42px;min-height:42px;border-radius:14px;transform:rotate(90deg);width:42px;justify-self:center}
 }
+
+/* ===== V6.7 TRAINING → RACE FLOW ===== */
+.phaseBridge.trainingOnly{display:block;max-width:940px;margin:28px auto 34px}
+.phaseBridge.trainingOnly .trainingPhase{min-height:158px}
+#journey .journey{margin-top:8px}
+#tactics{padding-top:34px}
+.raceStart{max-width:940px;margin:0 auto 42px;position:relative}
+.raceStart .racePhase{min-height:174px;border-radius:26px;box-shadow:0 18px 46px rgba(255,90,0,.18)}
+.raceConnector{width:max-content;margin:14px auto 0;display:flex;flex-direction:column;align-items:center;gap:5px;color:#6a3b00;font-size:10px;letter-spacing:.12em}
+.raceConnector span{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;background:#090909;color:var(--yellow);font-size:22px;font-weight:950}
+#rank .score{font-size:16px;color:#090909}
+@media(max-width:700px){
+.phaseBridge.trainingOnly{margin:22px 4px 28px}
+.raceStart{margin:0 0 34px}.raceStart .racePhase{border-radius:22px;padding:22px 20px}
+#journey{padding-bottom:42px}#tactics{padding-top:28px}
+}
+
 </style></head><body>
-<header><nav class="w nav"><div class="brand brandLogo"><span class="athenaMark">A</span><span>ATHENA CM · <b>CONTENT FIRST MARATHON</b></span></div><div class="links"><a href="#journey">5 chặng</a><a href="#tactics">Tactics</a><a href="#join">Tham gia</a><a href="#rank">Tiến độ</a><a href="#reward">Phần thưởng</a></div><a class="pill orange" href="https://t.me/ContentFirstMarathon_bot" target="_blank" rel="noopener">Đăng ký ngay →</a></nav></header>
+<header><nav class="w nav"><div class="brand brandLogo"><span class="athenaMark">A</span><span>ATHENA CM · <b>CONTENT FIRST MARATHON</b></span></div><div class="links"><a href="#journey">Training</a><a href="#tactics">Sales Race</a><a href="#join">Tham gia</a><a href="#rank">Tiến độ</a><a href="#reward">Phần thưởng</a></div><a class="pill orange" href="https://t.me/ContentFirstMarathon_bot" target="_blank" rel="noopener">Đăng ký ngay →</a></nav></header>
 
 <main>
 <section class="hero kvHero">
@@ -304,12 +321,10 @@ html{scroll-behavior:smooth}
 </div>
 </section>
 
-<div class="manifest"><div class="w manifestIn"><div class="routeIcon">🏃</div><div><h3>TRANG BỊ 30 NGÀY. BỨT TỐC ĐẾN CUỐI H2.</h3><p>Giai đoạn 1: Training 12/8–15/9 · Giai đoạn 2: Race 16/9–31/12/2026.</p></div></div></div>
+<div class="manifest"><div class="w manifestIn"><div class="routeIcon">🏃</div><div><h3>TRANG BỊ TRƯỚC RACE. SẴN SÀNG BỨT PHÁ.</h3><p>Training 12/8–15/9 · Sau đó bước vào Sales Race 16/9–31/12/2026.</p></div></div></div>
 
-<section id="journey"><div class="w"><div class="title"><div class="k">TRAINING PHASE · 12/8–15/9</div><h2>5 BUỔI TRANG BỊ CONTENT FIRST</h2><p><b>Từ tư duy → sản phẩm → năng lực thực chiến.</b><br>Trang bị trước Race — SẴN SÀNG BỨT PHÁ</p></div><div class="phaseBridge">
-<div class="phase trainingPhase"><div class="phaseTop"><b>01 · TRAINING</b><em class="phaseFlag">ĐANG DIỄN RA</em></div><div class="phaseClock"><strong class="clockNum" id="trainingClock">30</strong><small class="clockUnit">NGÀY TRAINING</small></div><span class="phaseMeta">12/8–15/9 · 5 buổi Content First & sản phẩm<br>Hoàn thiện hành trang trước giờ xuất phát.</span></div>
-<div class="phaseArrow">→</div>
-<div class="phase racePhase"><div class="phaseTop"><b>02 · SALES RACE</b><em class="phaseFlag" id="raceFlag">COUNTDOWN</em></div><div class="phaseClock"><strong class="clockNum" id="raceCountdown">--</strong><small class="clockUnit" id="raceCountdownUnit">NGÀY TỚI RACE</small></div><span class="phaseMeta">16/9–31/12 · Thực chiến, tích KM, bứt tốc doanh số<br>Đếm ngược tới khi chặng đua kết thúc 31/12.</span></div>
+<section id="journey"><div class="w"><div class="title"><div class="k">TRAINING PHASE · 12/8–15/9</div><h2>5 BUỔI TRANG BỊ CONTENT FIRST</h2><p><b>Từ tư duy → sản phẩm → năng lực thực chiến.</b><br>Trang bị trước Race — SẴN SÀNG BỨT PHÁ</p></div><div class="phaseBridge trainingOnly">
+<div class="phase trainingPhase"><div class="phaseTop"><b>01 · TRAINING</b><em class="phaseFlag">ĐANG DIỄN RA</em></div><div class="phaseClock"><strong class="clockNum" id="trainingClock">30</strong><small class="clockUnit">NGÀY TRANG BỊ</small></div><span class="phaseMeta">12/8–15/9 · 5 buổi Content First & sản phẩm<br>Trang bị trước Race — SẴN SÀNG BỨT PHÁ.</span></div>
 </div>
 <div class="journey">
 <div class="stage"><div class="circle">01</div><div class="stageNo">1</div><h3>BUỔI 1 · CONTENT FIRST MINDSET</h3><b>Nắm tư duy Content First</b><p>Làm chủ tư duy giải bài toán khách hàng.</p></div>
@@ -319,7 +334,13 @@ html{scroll-behavior:smooth}
 <div class="stage"><div class="circle">05</div><div class="stageNo">5</div><h3>BUỔI 5 · READY TO RACE</h3><b>Hoàn thiện hành trang vào Race</b><p>Sẵn sàng bước vào chặng đua doanh số H2.</p></div>
 </div></div></section>
 
-<section class="tactics" id="tactics"><div class="w"><div class="head"><div><div class="k">RACE MISSIONS · 16/9–31/12</div><h2>BỨT TỐC DOANH SỐ,<br>BỎ TÚI DEAL XỊN</h2></div><p>Mỗi Tactic là một cột mốc bứt phá. Tạo hành động thực tế – nhận KM thưởng ngay!</p></div>
+<section class="tactics" id="tactics"><div class="w">
+<div class="raceStart"><div class="phase racePhase">
+<div class="phaseTop"><b>02 · SALES RACE</b><em class="phaseFlag" id="raceFlag">RACE COUNTDOWN</em></div>
+<div class="phaseClock"><strong class="clockNum" id="raceCountdown">--</strong><small class="clockUnit" id="raceCountdownUnit">NGÀY CÒN LẠI</small></div>
+<span class="phaseMeta">16/9–31/12 · Thực chiến, tích KM, bứt tốc doanh số<br>Đếm ngược tới khi chặng đua kết thúc 31/12.</span>
+</div><div class="raceConnector"><span>↓</span><b>RACE MISSIONS</b></div></div>
+<div class="head"><div><div class="k">RACE MISSIONS · 16/9–31/12</div><h2>BỨT TỐC DOANH SỐ,<br>BỎ TÚI DEAL XỊN</h2></div><p>Mỗi Tactic là một cột mốc bứt phá. Tạo hành động thực tế – nhận KM thưởng ngay!</p></div>
 <div class="cards">
 <div class="card"><div class="ci">🏁</div><h3>Cam kết DS Content</h3><p>Đăng ký mục tiêu doanh số Content First.</p><div class="points">+200M</div></div>
 <div class="card"><div class="ci">💡</div><h3>Brief mới</h3><p>Mang về Brief SP Content/Product Marketing hợp lệ.</p><div class="points">+300M</div></div>
@@ -328,10 +349,10 @@ html{scroll-behavior:smooth}
 <div class="card"><div class="ci">📈</div><h3>Tăng trưởng nhãn</h3><p>Tăng trưởng doanh số trên nhãn hàng hiện có (so với cùng kỳ).</p><div class="points">+1KM</div></div>
 <div class="card"><div class="ci">🤝</div><h3>Mở nhãn mới</h3><p>Ký hợp đồng với nhãn hàng mới.</p><div class="points">+1.5KM</div></div>
 <div class="card"><div class="ci">🎯</div><h3>Đạt cam kết DS</h3><p>Hoàn thành 100% chỉ tiêu doanh số đã đăng ký.</p><div class="points">+2KM</div></div>
-<div class="card more"><div class="ci">🔒</div><h3>Tactic Bí Mật</h3><p><b>[SẮP MỞ]</b><br>Thử thách nhân đôi sẽ xuất hiện bất ngờ!</p><div class="points">??? KM</div></div></div><div class="rule">💡 1KM = 100.000 VNĐ · Quy đổi tiền mặt cuối kỳ. KM là “quãng đường thưởng” trên Race, không phải số km chạy bộ thực tế.</div></div></section>
+<div class="card more"><div class="ci">🔒</div><h3>Tactic Bí Mật</h3><p><b>[SẮP MỞ]</b><br>Thử thách nhân đôi sẽ xuất hiện bất ngờ!</p><div class="points">??? KM</div></div></div></div></section>
 
 <section id="rank"><div class="w dashboard">
-<div class="box"><h3>BẢNG XẾP HẠNG TOP SALE</h3><div class="tabs"><span class="tab active">TOP ĐIỂM</span><span class="tab">TOP TĂNG TỐC</span></div>
+<div class="box"><h3>BẢNG XẾP HẠNG TOP SALE</h3><div class="tabs"><span class="tab active">TOP KM</span><span class="tab">TOP TĂNG TỐC</span></div>
 <div id="leaderboardRows"><p class="muted">Đang tải bảng xếp hạng…</p></div></div>
 
 <div class="box join" id="join"><h3>CẬP NHẬT KẾT QUẢ<br>QUA TELEGRAM BOT</h3><p>Quét mã QR để đăng ký thử thách và cập nhật doanh số realtime.</p><a class="qr qrLive" href="https://t.me/ContentFirstMarathon_bot" target="_blank" rel="noopener"><span>@ContentFirstMarathon_bot<br><small>Nhấn để mở Bot</small></span></a><a class="pill" href="https://t.me/ContentFirstMarathon_bot" target="_blank" rel="noopener">✈ Mở Telegram Bot</a><p>{Hướng dẫn chi tiết →}</p></div>
@@ -344,13 +365,12 @@ html{scroll-behavior:smooth}
 </div></section>
 
 <div class="datebar"><div class="w dateIn"><div class="calendar">🗓️</div><div class="dateText"><b>TRAINING: 12/8–15/9/2026　 |　 SALES RACE: 16/9–31/12/2026</b><br><span>Trang bị sẵn sàng - bứt tốc ngay!</span></div><a class="pill orange" href="#join">ĐĂNG KÝ NGAY →</a></div></div>
-</main><footer><div class="w">Athena CM · Content First Marathon · V6 · Dữ liệu BXH đồng bộ từ hệ thống đã duyệt.</div></footer>
+</main><footer><div class="w">Athena CM · Content First Marathon · V6.7 · Dữ liệu BXH đồng bộ từ hệ thống đã duyệt.</div></footer>
 <a class="mobile" href="#join">ĐĂNG KÝ NGAY →</a>
 
 <div class="syncStatus" id="syncStatus">DATA · chưa nối API</div>
 <script>
 const CFM = {
-  CASH_PER_KM: 100000, // 1 KM = 100.000 VNĐ
   API_URL: "https://script.google.com/macros/s/AKfycbya8viXnKhyMmBp73l2qO-CqVOZcXbZEcYbA2ez0LOh_MQxntPrjlC0h9pptgeclzutJw/exec", // Web App /exec đang dùng cho CFM Bot
   BOT_URL: "https://t.me/ContentFirstMarathon_bot",
   REFRESH_MS: 60000
@@ -368,8 +388,12 @@ function formatKMValue(km){
   if(km>0 && km<1) return Math.round(km*1000)+"M";
   return (Number.isInteger(km)?km:km.toFixed(1))+"KM";
 }
+function rowKM(r){
+  const direct=r?.km ?? r?.KM ?? r?.totalKM ?? r?.distanceKM;
+  if(direct!==undefined && direct!==null && direct!=="") return Number(direct||0);
+  return scoreToKM(r?.score);
+}
 function formatKM(score){return formatKMValue(scoreToKM(score));}
-function formatCashFromKM(km){return Math.round(Number(km||0)*CFM.CASH_PER_KM).toLocaleString("vi-VN")+"đ";}
 function buildNameMap(d){
   const map={"106492":"Trần Duy Hải"}; // fallback hiện tại; API/Sheet vẫn được ưu tiên
   const pools=[d?.users,d?.masterList,d?.participants,d?.sales];
@@ -398,7 +422,7 @@ function renderLeaderboard(rows,nameMap={}){
     <div class="row">
       <div class="rank">${i+1}</div>
       <div class="person"><b>${esc(saleDisplayName(r,nameMap))}</b><span>${esc(r.team||"")}</span></div>
-      <div class="score"><b>${esc(formatKM(r.score))}</b><span style="display:block;font-size:9px;font-weight:700;color:#6b7280;margin-top:2px">≈ ${esc(formatCashFromKM(scoreToKM(r.score)))}</span></div>
+      <div class="score"><b>${esc(formatKMValue(rowKM(r)))}</b></div>
     </div>`).join("");
   setTimeout(animateVisibleNumbers,40);
 }
