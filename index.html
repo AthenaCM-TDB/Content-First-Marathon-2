@@ -12,6 +12,9 @@ h1{font-size:clamp(64px,7.4vw,105px);line-height:.82;letter-spacing:-.075em;marg
 .manifest{position:relative;z-index:5;margin-top:-18px}.manifestIn{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px 28px;box-shadow:0 10px 35px #1018270c;display:flex;align-items:center;justify-content:center;gap:26px}.routeIcon{font-size:31px}.manifest h3{margin:0;color:var(--orange);font-size:20px}.manifest p{margin:4px 0 0;font-weight:800}
 section{padding:68px 0}.title{text-align:center;margin-bottom:38px}.title h2,.head h2{font-size:clamp(35px,4.5vw,56px);line-height:.98;letter-spacing:-.055em;margin:8px 0}.title p,.head p{color:var(--muted)}
 .journey{display:grid;grid-template-columns:repeat(5,1fr);position:relative;gap:12px}.journey:before{content:"";position:absolute;left:8%;right:8%;top:39px;border-top:2px dashed #b9bec7}.stage{text-align:center;position:relative}.circle{position:relative;z-index:2;width:78px;height:78px;border:2px solid #aab0bb;background:#fff;border-radius:50%;display:grid;place-items:center;margin:auto;font-size:30px}.stage:first-child .circle{border-color:var(--orange);color:var(--orange);background:#fff4ef}.stageNo{font-size:12px;font-weight:950;margin-top:9px}.stage h3{font-size:14px;line-height:1.12;margin:4px auto;max-width:190px;min-height:31px;display:flex;align-items:center;justify-content:center}.stage b{font-size:12px}.stage p{font-size:12px;color:var(--muted);max-width:175px;margin:7px auto}
+.stageDate{display:inline-block;margin:5px auto 2px;padding:4px 7px;border-radius:999px;background:#fff2e9;color:var(--orange);font-size:9px;font-weight:950;letter-spacing:.035em}
+.stageSpeaker{max-width:180px;margin:7px auto 0;font-size:10px;line-height:1.35;font-weight:800;color:#444}
+
 .tactics{background:#fafafa}.head{display:grid;grid-template-columns:.75fr 1.25fr;gap:50px;align-items:end;margin-bottom:30px}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.card{background:#fff;border:1px solid var(--line);border-radius:15px;padding:20px;min-height:255px;display:flex;flex-direction:column}.card.new:before{content:"MỚI";align-self:flex-start;background:var(--orange);color:#fff;border-radius:6px;padding:3px 7px;font-size:9px;font-weight:950}.ci{font-size:37px;margin:15px 0}.card h3{font-size:16px;margin:0 0 8px}.card p{font-size:12px;color:var(--muted)}.points{margin-top:auto;color:var(--orange);font-weight:950;font-size:13px}.card.more{border-style:dashed;justify-content:center;text-align:center}.rule{text-align:center;color:var(--muted);font-size:11px;margin-top:14px}
 .dashboard{display:grid;grid-template-columns:1fr .75fr 1fr;gap:18px}.box{background:#f8f8f8;border-radius:18px;padding:24px}.box h3{font-size:23px;line-height:1.1;margin:0 0 18px}.tabs{display:flex;gap:7px;margin-bottom:12px}.tab{padding:8px 11px;border-radius:7px;background:#fff;font-size:10px;font-weight:850}.tab.active{background:var(--orange);color:#fff}.row{display:grid;grid-template-columns:27px 1fr auto;gap:9px;align-items:center;padding:10px 0;border-bottom:1px solid #e4e5e7}.rank{color:var(--orange);font-weight:950}.person b{font-size:13px}.person span{display:block;font-size:10px;color:var(--muted)}.score{font-weight:950}.join{background:linear-gradient(145deg,#ff6b37,#ff8a47);color:#fff;text-align:center}.join p{font-size:12px}.qr{width:150px;aspect-ratio:1;margin:18px auto;background:#fff;border-radius:12px;display:grid;place-items:center;color:var(--ink);border:8px solid #fff;box-shadow:inset 0 0 0 2px #111}.qr span{font-size:11px;font-weight:950}.join .pill{background:#111827;border-color:#111827;color:#fff}.rewardItem{background:#fff;border-radius:11px;padding:12px;display:grid;grid-template-columns:38px 1fr;gap:10px;align-items:center;margin:9px 0}.rewardItem i{font-style:normal;font-size:24px}.rewardItem b{font-size:13px}
 .datebar{padding:0 0 55px}.dateIn{border:1px solid var(--line);border-radius:16px;padding:18px 28px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:25px}.calendar{font-size:31px}.dateText b{font-size:17px}.dateText span{color:var(--muted);font-size:13px}.mobile{display:none}footer{padding:22px 0;color:var(--muted);font-size:11px}
@@ -294,6 +297,122 @@ html{scroll-behavior:smooth}
 #journey{padding-bottom:42px}#tactics{padding-top:28px}
 }
 
+
+/* ===== V6.14 · TRAINING CARD UX ===== */
+.trainingShowcase{padding:62px 0 54px;background:#fffaf0}
+.trainingPanel{
+  position:relative;overflow:hidden;
+  border-radius:36px;padding:42px 38px 32px;
+  background:
+    radial-gradient(circle at 83% 12%,rgba(255,255,255,.28) 0 7%,transparent 7.5%),
+    radial-gradient(circle at 91% 2%,rgba(255,255,255,.18) 0 4%,transparent 4.5%),
+    linear-gradient(135deg,#ffd85a 0%,#ffb51c 48%,#ff8a00 100%);
+  box-shadow:0 26px 70px rgba(197,112,0,.14)
+}
+.trainingPanel:after{
+  content:"A";position:absolute;right:55px;top:24px;
+  width:88px;height:88px;border-radius:50%;
+  display:grid;place-items:center;font-size:38px;font-weight:1000;
+  color:#7a4300;background:linear-gradient(145deg,#ffe588,#d98a00);
+  border:2px solid rgba(255,255,255,.6);
+  box-shadow:inset 0 2px 6px rgba(255,255,255,.55),0 12px 24px rgba(120,65,0,.2);
+  opacity:.55;transform:rotate(-8deg)
+}
+.trainingPanelHead{display:grid;grid-template-columns:1.05fr 1fr;gap:50px;align-items:end;position:relative;z-index:2;margin-bottom:26px}
+.trainingEyebrow{font-size:11px;font-weight:1000;letter-spacing:.16em;color:#7b4700;margin-bottom:8px}
+.trainingPanelHead h2{margin:0;font-size:52px;line-height:.82;letter-spacing:-.055em;text-transform:none;color:#fff;font-weight:1000}
+.trainingPanelHead h2 span{color:#2b1d00}
+.trainingIntro{padding-right:105px;color:#472b00}
+.trainingIntro b{display:block;font-size:17px;margin-bottom:8px}
+.trainingIntro p{font-size:13px;line-height:1.55;margin:0;max-width:490px}
+.trainingStatus{display:inline-flex;align-items:center;gap:7px;margin-top:13px;padding:7px 11px;border-radius:999px;background:#171717;color:#fff;font-size:10px;font-weight:950;letter-spacing:.08em}
+.trainingStatus i{width:7px;height:7px;border-radius:50%;background:#ffe000;box-shadow:0 0 0 4px rgba(255,224,0,.18)}
+.trainingSwipeHint{display:none;font-size:11px;font-weight:900;color:#5f3700;margin:0 0 10px 3px}
+.trainingCards{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;position:relative;z-index:2}
+.trainingCard{
+  min-width:0;background:#fff;border-radius:22px;padding:10px 10px 14px;
+  border:1px solid rgba(111,64,0,.08);
+  box-shadow:0 8px 20px rgba(143,78,0,.09);
+  transition:transform .2s ease,box-shadow .2s ease
+}
+.trainingCard:hover{transform:translateY(-5px);box-shadow:0 18px 32px rgba(122,68,0,.16)}
+.trainingCard.isCurrent{box-shadow:0 0 0 3px rgba(255,255,255,.7),0 18px 34px rgba(122,68,0,.16)}
+.trainingVisual{
+  height:108px;border-radius:15px;position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(145deg,#fff5c8,#ffd75c)
+}
+.trainingVisual:before{
+  content:"";position:absolute;width:120px;height:120px;border-radius:50%;
+  left:-35px;top:-50px;background:rgba(255,255,255,.45)
+}
+.trainingVisual:after{
+  content:"";position:absolute;width:75px;height:75px;border-radius:50%;
+  right:-20px;bottom:-35px;background:rgba(255,132,0,.18)
+}
+.trainingEmoji{font-size:46px;filter:drop-shadow(0 8px 8px rgba(84,48,0,.12));position:relative;z-index:2}
+.trainingNum{
+  position:absolute;left:10px;top:9px;z-index:3;
+  font-size:10px;font-weight:1000;background:#171717;color:#ffe000;
+  border-radius:999px;padding:5px 7px
+}
+.trainingPill{
+  display:inline-block;margin:10px 0 7px;padding:5px 8px;border-radius:999px;
+  background:#fff1d7;color:#d95800;font-size:8px;font-weight:1000;letter-spacing:.035em
+}
+.trainingCard h3{font-size:14px;line-height:1.03;letter-spacing:-.015em;margin:0 0 8px;color:#111;min-height:29px}
+.trainingCard h4{font-size:11px;line-height:1.25;margin:0 0 7px;color:#3e2b09;min-height:28px}
+.trainingCard p{font-size:10px;line-height:1.42;color:#6d665b;margin:0;min-height:70px}
+.trainingSpeaker{
+  display:flex;align-items:flex-start;gap:5px;margin-top:10px;padding-top:9px;
+  border-top:1px solid #eee4d7;font-size:9px;line-height:1.3;font-weight:900;color:#4a4138
+}
+.trainingSpeaker small{font-size:8px;font-weight:700}
+.trainingFooter{
+  margin-top:22px;padding:15px 17px 15px 20px;border-radius:18px;
+  background:#171717;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:24px
+}
+.trainingFooter div{display:flex;flex-direction:column;gap:3px}
+.trainingFooter b{font-size:11px;color:#ffe000;letter-spacing:.08em}
+.trainingFooter span{font-size:11px;color:#ddd}
+.trainingFooter a{
+  flex:none;text-decoration:none;padding:11px 15px;border-radius:999px;
+  background:#ffe000;color:#111;font-size:10px;font-weight:1000
+}
+
+@media(max-width:930px){
+  .trainingPanel{padding:30px 22px 24px;border-radius:28px}
+  .trainingPanelHead{grid-template-columns:1fr;gap:20px}
+  .trainingPanelHead h2{font-size:44px}
+  .trainingIntro{padding-right:0;max-width:620px}
+  .trainingPanel:after{right:25px;top:24px;width:70px;height:70px;font-size:30px}
+  .trainingCards{display:flex;overflow-x:auto;overflow-y:hidden;gap:14px;scroll-snap-type:x mandatory;padding:4px 3px 16px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .trainingCards::-webkit-scrollbar{display:none}
+  .trainingCard{flex:0 0 270px;scroll-snap-align:start;padding:11px 11px 15px}
+  .trainingSwipeHint{display:block}
+  .trainingCard p{min-height:auto}
+  .trainingFooter{align-items:flex-start;flex-direction:column}
+}
+@media(max-width:560px){
+  .trainingShowcase{padding:38px 0 34px}
+  .trainingShowcase .w{width:100%!important}
+  .trainingPanel{border-radius:0;padding:28px 18px 22px}
+  .trainingPanelHead{margin-bottom:18px}
+  .trainingPanelHead h2{font-size:39px}
+  .trainingEyebrow{font-size:10px}
+  .trainingIntro b{font-size:15px}
+  .trainingIntro p{font-size:12px}
+  .trainingPanel:after{opacity:.32;right:14px;top:18px;width:62px;height:62px}
+  .trainingCard{flex-basis:78vw;max-width:295px}
+  .trainingVisual{height:118px}
+  .trainingCard h3{font-size:16px}
+  .trainingCard h4{font-size:12px;min-height:0}
+  .trainingCard p{font-size:11px}
+  .trainingSpeaker{font-size:10px}
+  .trainingPill{font-size:9px}
+  .trainingFooter span{font-size:10px}
+}
+
 </style>
 <style>
 /* V6.10 QR FULL ARTWORK FIX */
@@ -327,7 +446,7 @@ html{scroll-behavior:smooth}
 </style>
 
 <style>
-/* V6.11 MOBILE TACTIC SWIPE — desktop giữ nguyên 4×2 */
+/* V6.14 MOBILE TACTIC SWIPE — desktop giữ nguyên 4×2 */
 .tacticSwipeHint{display:none}
 @media(max-width:600px){
   #tactics .head{margin-bottom:14px}
@@ -397,8 +516,8 @@ html{scroll-behavior:smooth}
     <div class="eye">ATHENA CM · CONTENT FIRST MARATHON · H2/2026</div>
     <h1 class="srOnly">CONTENT FIRST MARATHON</h1>
     <div class="kvMessage">
-      <strong>30 NGÀY TRANG BỊ.<br>SẴN SÀNG BỨT TỐC.</strong>
-      <p>30 ngày Training Content First & sản phẩm — trang bị tư duy, giải pháp và kỹ năng trước khi bước vào chặng đua doanh số đến hết H2/2026.</p>
+      <strong>5 BUỔI TRANG BỊ.<br>SẴN SÀNG BỨT TỐC.</strong>
+      <p>Training Content First từ 21/8–16/9 — đi từ tư duy, hệ sinh thái sản phẩm đến workflow thực chiến trước khi bước vào Sales Race.</p>
     </div>
     <div class="actions">
       <a class="pill orange" href="https://t.me/ContentFirstMarathon_bot" target="_blank" rel="noopener">THAM GIA CHƯƠNG TRÌNH →</a>
@@ -413,18 +532,95 @@ html{scroll-behavior:smooth}
 </div>
 </section>
 
-<div class="manifest"><div class="w manifestIn"><div class="routeIcon">🏃</div><div><h3>TRANG BỊ TRƯỚC RACE. SẴN SÀNG BỨT PHÁ.</h3><p>Training 12/8–15/9 · Sau đó bước vào Sales Race 16/9–31/12/2026.</p></div></div></div>
+<div class="manifest"><div class="w manifestIn"><div class="routeIcon">🏃</div><div><h3>TRANG BỊ TRƯỚC RACE. SẴN SÀNG BỨT PHÁ.</h3><p>Training 21/8–16/9 · 5 buổi đi từ Mindset → Product → Workflow → Sales Story · Sales Race 16/9–31/12/2026.</p></div></div></div>
 
-<section id="journey"><div class="w"><div class="title"><div class="k">TRAINING PHASE · 12/8–15/9</div><h2>5 BUỔI TRANG BỊ CONTENT FIRST</h2><p><b>Từ tư duy → sản phẩm → năng lực thực chiến.</b><br>Trang bị trước Race — SẴN SÀNG BỨT PHÁ</p></div><div class="phaseBridge trainingOnly">
-<div class="phase trainingPhase"><div class="phaseTop"><b>01 · TRAINING</b><em class="phaseFlag">ĐANG DIỄN RA</em></div><div class="phaseClock"><strong class="clockNum" id="trainingClock">30</strong><small class="clockUnit">NGÀY TRANG BỊ</small></div><span class="phaseMeta">12/8–15/9 · 5 buổi Content First & sản phẩm<br>Trang bị trước Race — SẴN SÀNG BỨT PHÁ.</span></div>
-</div>
-<div class="journey">
-<div class="stage"><div class="circle">01</div><div class="stageNo">1</div><h3>BUỔI 1 · CONTENT FIRST MINDSET</h3><b>Nắm tư duy Content First</b><p>Làm chủ tư duy giải bài toán khách hàng.</p></div>
-<div class="stage"><div class="circle">02</div><div class="stageNo">2</div><h3>BUỔI 2 · PRODUCT GEAR</h3><b>Nắm sản phẩm & giải pháp mũi nhọn</b><p>Nắm chắc gói sản phẩm chiến lược để chốt deal.</p></div>
-<div class="stage"><div class="circle">03</div><div class="stageNo">3</div><h3>BUỔI 3 · SALES APPLICATION</h3><b>Ứng dụng vào bài toán bán hàng</b><p>Đăng ký mục tiêu và kích hoạt tích điểm.</p></div>
-<div class="stage"><div class="circle">04</div><div class="stageNo">4</div><h3>BUỔI 4 · PRACTICE</h3><b>Thực hành & xử lý tình huống</b><p>Biến kiến thức thành cách mở brief và chốt cơ hội.</p></div>
-<div class="stage"><div class="circle">05</div><div class="stageNo">5</div><h3>BUỔI 5 · READY TO RACE</h3><b>Hoàn thiện hành trang vào Race</b><p>Sẵn sàng bước vào chặng đua doanh số H2.</p></div>
-</div></div></section>
+
+<section id="journey" class="trainingShowcase">
+  <div class="w">
+    <div class="trainingPanel">
+      <div class="trainingPanelHead">
+        <div>
+          <div class="trainingEyebrow">TRAINING PHASE · 21/8–16/9</div>
+          <h2>Content First<br><span>Training Track</span></h2>
+        </div>
+        <div class="trainingIntro">
+          <b>5 buổi · 1 hành trình bán hàng</b>
+          <p>Không học theo kiểu “catalogue sản phẩm”. Sale đi từ <strong>hiểu tư duy</strong> → <strong>chọn giải pháp</strong> → <strong>bắt tín hiệu</strong> → <strong>debrief</strong> → <strong>kể câu chuyện để bán</strong>.</p>
+          <div class="trainingStatus"><i></i> ĐANG DIỄN RA</div>
+        </div>
+      </div>
+
+      <div class="trainingSwipeHint">Vuốt ngang để xem lộ trình →</div>
+
+      <div class="trainingCards" aria-label="Lộ trình 5 buổi Content First">
+        <article class="trainingCard isCurrent">
+          <div class="trainingVisual">
+            <span class="trainingNum">01</span>
+            <span class="trainingEmoji">💡</span>
+          </div>
+          <div class="trainingPill">21/08 · MASS</div>
+          <h3>CONTENT FIRST<br>MINDSET</h3>
+          <h4>Nắm tư duy Content First</h4>
+          <p>Từ bán inventory sang giải bài toán nội dung; nhận diện “vùng xanh” và biết cách mở câu chuyện với khách hàng.</p>
+          <div class="trainingSpeaker"><span>🎤</span> Chị My</div>
+        </article>
+
+        <article class="trainingCard">
+          <div class="trainingVisual">
+            <span class="trainingNum">02</span>
+            <span class="trainingEmoji">🧭</span>
+          </div>
+          <div class="trainingPill">28/08 · MASS</div>
+          <h3>HỆ SINH THÁI<br>CONTENT FIRST</h3>
+          <h4>Chọn giải pháp đúng bài toán</h4>
+          <p>Content Roadmap H2, hệ sinh thái Athena theo ngân sách/bài toán và đầu mối sản phẩm – Account cần kéo vào.</p>
+          <div class="trainingSpeaker"><span>🎤</span> Chị Hương + Chị Như Anh</div>
+        </article>
+
+        <article class="trainingCard">
+          <div class="trainingVisual">
+            <span class="trainingNum">03</span>
+            <span class="trainingEmoji">🎧</span>
+          </div>
+          <div class="trainingPill">04/09 · WORKSHOP</div>
+          <h3>WORKFLOW<br>BẮT TÍN HIỆU</h3>
+          <h4>Nghe đúng tín hiệu mua</h4>
+          <p>Nhận diện tín hiệu, đặt câu hỏi, bóc Pain Point và role-play tình huống khách chưa có brief hoặc chỉ hỏi booking.</p>
+          <div class="trainingSpeaker"><span>🎤</span> Sale kỳ cựu · Yến / Huyền Linh <small>(dự kiến)</small></div>
+        </article>
+
+        <article class="trainingCard">
+          <div class="trainingVisual">
+            <span class="trainingNum">04</span>
+            <span class="trainingEmoji">🧩</span>
+          </div>
+          <div class="trainingPill">09/09 · CASE CLINIC</div>
+          <h3>WORKFLOW<br>DEBRIEF</h3>
+          <h4>Biến tín hiệu thành bài toán rõ</h4>
+          <p>Dùng case thật Athena để chuyển thông tin Sale nghe được thành debrief/brief đủ tốt cho Acc & Product xử lý tiếp.</p>
+          <div class="trainingSpeaker"><span>🎤</span> Acc Lead · Cường / Ca / Chị Hằng / Chị Như Anh</div>
+        </article>
+
+        <article class="trainingCard">
+          <div class="trainingVisual">
+            <span class="trainingNum">05</span>
+            <span class="trainingEmoji">🚀</span>
+          </div>
+          <div class="trainingPill">16/09 · READY TO RACE</div>
+          <h3>SALES STORY<br>→ SALES RACE</h3>
+          <h4>Biến giải pháp thành câu chuyện để bán</h4>
+          <p>Hoàn thiện sales story, plan tiếp cận và bước tiếp theo với khách; cam kết mục tiêu, launch Mission – KM – BXH.</p>
+          <div class="trainingSpeaker"><span>🎤</span> Product Team + TĐB Athena</div>
+        </article>
+      </div>
+
+      <div class="trainingFooter">
+        <div><b>ĐÍCH ĐẾN TRAINING</b><span>Mỗi Sale rời khóa với mục tiêu + danh sách cơ hội/nhãn + hành động tiếp theo.</span></div>
+        <a href="#tactics">BƯỚC VÀO SALES RACE →</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="tactics" id="tactics"><div class="w">
 <div class="raceStart"><div class="phase racePhase">
@@ -458,13 +654,13 @@ html{scroll-behavior:smooth}
 </div></section>
 
 <div class="datebar"><div class="w dateIn"><div class="calendar">🗓️</div><div class="dateText"><b>TRAINING: 12/8–15/9/2026　 |　 SALES RACE: 16/9–31/12/2026</b><br><span>Trang bị sẵn sàng - bứt tốc ngay!</span></div><a class="pill orange" href="#join">ĐĂNG KÝ NGAY →</a></div></div>
-</main><footer><div class="w">Athena CM · Content First Marathon · V6.8 · BXH dùng trực tiếp dữ liệu KM đã duyệt từ KMLog.</div></footer>
+</main><footer><div class="w">Athena CM · Content First Marathon · V6.14 · BXH dùng trực tiếp dữ liệu KM đã duyệt từ KMLog.</div></footer>
 <a class="mobile" href="#join">ĐĂNG KÝ NGAY →</a>
 
 <div class="syncStatus" id="syncStatus">DATA · chưa nối API</div>
 <script>
 const CFM = {
-  API_URL: "https://script.google.com/macros/s/AKfycbyj_RTJnkvhca0oDewH7Am0IgPZ3G1shV2G4wq2N8mNAGXd7frMo49qW5LgVVp2glfWSg/exec", // Web App /exec đang dùng cho CFM Bot
+  API_URL: "https://script.google.com/macros/s/AKfycbyj_RTJnkvhca0oDewH7Am0IgPZ3G1shV2G4wq2N8mNAGXd7frMo49qW5LgVVp2g1fWSg/exec", // Web App /exec đang dùng cho CFM Bot
   BOT_URL: "https://t.me/ContentFirstMarathon_bot",
   REFRESH_MS: 60000
 };
