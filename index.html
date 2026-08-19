@@ -45,7 +45,7 @@ section{padding:68px 0}.title{text-align:center;margin-bottom:38px}.title h2,.he
 .scoreRules{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:0 0 18px}
 .scoreRules>div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px}
 .scoreRules b{display:block;color:var(--orange);font-size:24px}.scoreRules span{font-size:11px;color:var(--muted)}
-.qrLive{cursor:pointer;text-decoration:none;overflow:hidden;padding:0;border:0;box-shadow:0 12px 30px rgba(16,24,39,.18)}.qrLive img{display:block;width:100%;height:100%;object-fit:cover}.qrLive small{display:block;color:var(--muted);margin-top:5px}
+.qrLive{cursor:pointer;text-decoration:none}.qrLive small{display:block;color:var(--muted);margin-top:5px}
 .syncStatus{position:fixed;right:12px;bottom:12px;z-index:70;background:#101827;color:#fff;padding:8px 11px;border-radius:999px;font-size:10px;opacity:.88}
 @media(max-width:700px){.scoreRules{grid-template-columns:1fr 1fr}.syncStatus{bottom:78px}}
 
@@ -294,38 +294,33 @@ html{scroll-behavior:smooth}
 #journey{padding-bottom:42px}#tactics{padding-top:28px}
 }
 
-</style>
-<style>
-/* V6.10 QR FULL ARTWORK FIX */
-#join .qr.qrLive{
-  display:block !important;
-  width:190px !important;
-  height:auto !important;
-  aspect-ratio:auto !important;
-  margin:18px auto 16px !important;
-  padding:0 !important;
-  background:transparent !important;
-  border:0 !important;
-  border-radius:14px !important;
-  overflow:visible !important;
-  box-shadow:0 12px 30px rgba(16,24,39,.18) !important;
-}
-#join .qr.qrLive img{
-  display:block !important;
-  width:100% !important;
-  height:auto !important;
-  min-height:0 !important;
-  max-height:none !important;
-  aspect-ratio:auto !important;
-  object-fit:contain !important;
-  object-position:center !important;
-  border-radius:14px !important;
-}
+
+/* V6.8 — Mobile Tactic horizontal swipe */
+.tacticSwipeHint{display:none}
 @media(max-width:600px){
-  #join .qr.qrLive{width:min(190px,64vw) !important;}
+  #tactics .tacticSwipeHint{
+    display:flex;align-items:center;justify-content:space-between;gap:10px;
+    margin:-8px 0 14px;font-size:12px;font-weight:850;color:#251800;
+  }
+  #tactics .tacticSwipeHint span:last-child{font-size:20px;line-height:1}
+  #tactics .cards{
+    display:flex !important;grid-template-columns:none !important;
+    flex-wrap:nowrap;gap:12px;overflow-x:auto;overflow-y:hidden;
+    scroll-snap-type:x mandatory;scroll-padding-left:2px;
+    -webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;
+    touch-action:pan-x pan-y;
+    padding:2px 20px 14px 2px;margin-right:-14px;
+    scrollbar-width:none;
+  }
+  #tactics .cards::-webkit-scrollbar{display:none}
+  #tactics .cards .card{
+    flex:0 0 min(78vw,300px);width:min(78vw,300px);
+    min-height:250px;scroll-snap-align:start;scroll-snap-stop:normal;
+  }
+  #tactics .cards .card:last-child{grid-column:auto}
+  #tactics .card:hover{transform:none}
 }
-</style>
-</head><body>
+</style></head><body>
 <header><nav class="w nav"><div class="brand brandLogo"><span class="athenaMark">A</span><span>ATHENA CM · <b>CONTENT FIRST MARATHON</b></span></div><div class="links"><a href="#journey">Training</a><a href="#tactics">Sales Race</a><a href="#join">Tham gia</a><a href="#rank">Tiến độ</a><a href="#reward">Phần thưởng</a></div><a class="pill orange" href="https://t.me/ContentFirstMarathon_bot" target="_blank" rel="noopener">Đăng ký ngay →</a></nav></header>
 
 <main>
@@ -372,6 +367,7 @@ html{scroll-behavior:smooth}
 <span class="phaseMeta">16/9–31/12 · Thực chiến, tích KM, bứt tốc doanh số<br>Đếm ngược tới khi chặng đua kết thúc 31/12.</span>
 </div><div class="raceConnector"><span>↓</span><b>RACE MISSIONS</b></div></div>
 <div class="head"><div><div class="k">RACE MISSIONS · 16/9–31/12</div><h2>BỨT TỐC DOANH SỐ,<br>BỎ TÚI DEAL XỊN</h2></div><p>Mỗi Tactic là một cột mốc bứt phá. Tạo hành động thực tế – nhận KM thưởng ngay!</p></div>
+<div class="tacticSwipeHint"><span>Vuốt ngang để xem các Tactic</span><span>→</span></div>
 <div class="cards">
 <div class="card"><div class="ci">🏁</div><h3>Cam kết DS Content</h3><p>Đăng ký mục tiêu doanh số Content First.</p><div class="points">+200M</div></div>
 <div class="card"><div class="ci">💡</div><h3>Brief mới</h3><p>Mang về Brief SP Content/Product Marketing hợp lệ.</p><div class="points">+300M</div></div>
@@ -386,7 +382,7 @@ html{scroll-behavior:smooth}
 <div class="box"><h3>BẢNG XẾP HẠNG TOP SALE</h3><div class="tabs"><span class="tab active">TOP KM</span><span class="tab">TOP TĂNG TỐC</span></div>
 <div id="leaderboardRows"><p class="muted">Đang tải bảng xếp hạng…</p></div></div>
 
-<div class="box join" id="join"><h3>CẬP NHẬT KẾT QUẢ<br>QUA TELEGRAM BOT</h3><p>Quét mã QR để đăng ký thử thách và cập nhật doanh số realtime.</p><a class="qr qrLive" href="https://t.me/ContentFirstMarathon_bot" target="_blank" rel="noopener" aria-label="Quét QR hoặc mở Content First Marathon Bot"><img src="content-first-marathon-bot-qr.png" alt="QR Telegram @ContentFirstMarathon_bot"></a><a class="pill" href="https://t.me/ContentFirstMarathon_bot" target="_blank" rel="noopener">✈ Mở Telegram Bot</a><p>{Hướng dẫn chi tiết →}</p></div>
+<div class="box join" id="join"><h3>CẬP NHẬT KẾT QUẢ<br>QUA TELEGRAM BOT</h3><p>Quét mã QR để đăng ký thử thách và cập nhật doanh số realtime.</p><a class="qr qrLive" href="https://t.me/ContentFirstMarathon_bot" target="_blank" rel="noopener"><span>@ContentFirstMarathon_bot<br><small>Nhấn để mở Bot</small></span></a><a class="pill" href="https://t.me/ContentFirstMarathon_bot" target="_blank" rel="noopener">✈ Mở Telegram Bot</a><p>{Hướng dẫn chi tiết →}</p></div>
 
 <div class="box" id="reward"><h3>PHẦN THƯỞNG<br>CHO NGƯỜI VỀ ĐÍCH</h3>
 <div class="rewardItem"><i>🏅</i><b>Certificate Sale Content First</b></div>
@@ -396,30 +392,37 @@ html{scroll-behavior:smooth}
 </div></section>
 
 <div class="datebar"><div class="w dateIn"><div class="calendar">🗓️</div><div class="dateText"><b>TRAINING: 12/8–15/9/2026　 |　 SALES RACE: 16/9–31/12/2026</b><br><span>Trang bị sẵn sàng - bứt tốc ngay!</span></div><a class="pill orange" href="#join">ĐĂNG KÝ NGAY →</a></div></div>
-</main><footer><div class="w">Athena CM · Content First Marathon · V6.8 · BXH dùng trực tiếp dữ liệu KM đã duyệt từ KMLog.</div></footer>
+</main><footer><div class="w">Athena CM · Content First Marathon · V6.7 · Dữ liệu BXH đồng bộ từ hệ thống đã duyệt.</div></footer>
 <a class="mobile" href="#join">ĐĂNG KÝ NGAY →</a>
 
 <div class="syncStatus" id="syncStatus">DATA · chưa nối API</div>
 <script>
 const CFM = {
-  API_URL: "https://script.google.com/macros/s/AKfycbyj_RTJnkvhca0oDewH7Am0IgPZ3G1shV2G4wq2N8mNAGXd7frMo49qW5LgVVp2glfWSg/exec", // Web App /exec đang dùng cho CFM Bot
+  API_URL: "https://script.google.com/macros/s/AKfycbya8viXnKhyMmBp73l2qO-CqVOZcXbZEcYbA2ez0LOh_MQxntPrjlC0h9pptgeclzutJw/exec", // Web App /exec đang dùng cho CFM Bot
   BOT_URL: "https://t.me/ContentFirstMarathon_bot",
   REFRESH_MS: 60000
 };
 
 function esc(v){return String(v ?? "").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));}
 function setText(id,v){const e=document.getElementById(id); if(e)e.textContent=v;}
+function scoreToKM(score){
+  // Adapter tạm thời cho Sheet hiện tại: 10 score cũ = 1 KM.
+  // Khi Sheet chuyển sang lưu KM trực tiếp, chỉ cần đổi hàm này thành Number(score||0).
+  return Number(score||0)/10;
+}
 function formatKMValue(km){
   km=Number(km||0);
   if(km>0 && km<1) return Math.round(km*1000)+"M";
   return (Number.isInteger(km)?km:km.toFixed(1))+"KM";
 }
 function rowKM(r){
-  const direct=r?.km ?? r?.totalKM;
-  return Number(direct||0);
+  const direct=r?.km ?? r?.KM ?? r?.totalKM ?? r?.distanceKM;
+  if(direct!==undefined && direct!==null && direct!=="") return Number(direct||0);
+  return scoreToKM(r?.score);
 }
+function formatKM(score){return formatKMValue(scoreToKM(score));}
 function buildNameMap(d){
-  const map={}; // Tên lấy từ API; không hard-code MNS → Họ tên trong frontend
+  const map={"106492":"Trần Duy Hải"}; // fallback hiện tại; API/Sheet vẫn được ưu tiên
   const pools=[d?.users,d?.masterList,d?.participants,d?.sales];
   pools.forEach(list=>{
     if(!Array.isArray(list)) return;
