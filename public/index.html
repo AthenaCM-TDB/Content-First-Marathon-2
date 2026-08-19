@@ -505,6 +505,33 @@ html{scroll-behavior:smooth}
   #tactics .tacticSwipeHint span:last-child{animation:none}
 }
 </style>
+
+<style>
+/* V6.15 — Tách rõ 2 giai đoạn Training / Sales Race */
+.manifestIn{max-width:1040px;align-items:flex-start;justify-content:flex-start;gap:18px;padding:20px 24px}
+.manifestCopy{flex:1;min-width:0}
+.manifestCopy>h3{margin:0 0 13px}
+.manifestPhases{display:grid;grid-template-columns:minmax(0,1.35fr) 42px minmax(0,1fr);align-items:stretch;gap:10px}
+.manifestStage{min-width:0;border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;justify-content:center;border:1px solid rgba(255,255,255,.13)}
+.manifestStage .manifestKicker{font-size:9px;font-weight:950;letter-spacing:.1em;text-transform:uppercase;margin-bottom:5px}
+.manifestStage strong{font-size:17px;line-height:1.1;letter-spacing:-.02em}
+.manifestStage p{margin:5px 0 0;font-size:11px;line-height:1.45;font-weight:750}
+.manifestTraining{background:#181818;color:#fff}
+.manifestTraining .manifestKicker{color:var(--yellow)}
+.manifestTraining p{color:#d8d8d8}
+.manifestRace{background:linear-gradient(135deg,var(--yellow),#ff8a00);color:#090909;border-color:transparent}
+.manifestRace .manifestKicker{color:#4b2b00}
+.manifestRace p{color:#2f1d00}
+.manifestPhaseArrow{display:grid;place-items:center;color:var(--yellow);font-size:24px;font-weight:950}
+@media(max-width:700px){
+  .manifestIn{padding:18px;gap:13px}
+  .routeIcon{font-size:25px}
+  .manifestPhases{grid-template-columns:1fr;gap:8px}
+  .manifestPhaseArrow{height:24px;transform:rotate(90deg);font-size:20px}
+  .manifestStage{padding:14px}
+  .manifestStage strong{font-size:16px}
+}
+</style>
 </head><body>
 <header><nav class="w nav"><div class="brand brandLogo"><span class="athenaMark">A</span><span>ATHENA CM · <b>CONTENT FIRST MARATHON</b></span></div><div class="links"><a href="#journey">Training</a><a href="#tactics">Sales Race</a><a href="#join">Tham gia</a><a href="#rank">Tiến độ</a><a href="#reward">Phần thưởng</a></div><a class="pill orange" href="https://t.me/ContentFirstMarathon_bot" target="_blank" rel="noopener">Đăng ký ngay →</a></nav></header>
 
@@ -532,7 +559,25 @@ html{scroll-behavior:smooth}
 </div>
 </section>
 
-<div class="manifest"><div class="w manifestIn"><div class="routeIcon">🏃</div><div><h3>TRANG BỊ TRƯỚC RACE. SẴN SÀNG BỨT PHÁ.</h3><p>Training 21/8–16/9 · 5 buổi đi từ Mindset → Product → Workflow → Sales Story · Sales Race 16/9–31/12/2026.</p></div></div></div>
+<div class="manifest"><div class="w manifestIn">
+  <div class="routeIcon">🏃</div>
+  <div class="manifestCopy">
+    <h3>TRANG BỊ TRƯỚC RACE. SẴN SÀNG BỨT PHÁ.</h3>
+    <div class="manifestPhases" aria-label="Hai giai đoạn của Content First Marathon">
+      <div class="manifestStage manifestTraining">
+        <span class="manifestKicker">01 · GIAI ĐOẠN TRAINING</span>
+        <strong>21/8–16/9/2026</strong>
+        <p>5 buổi: Mindset → Product → Workflow → Sales Story</p>
+      </div>
+      <div class="manifestPhaseArrow" aria-hidden="true">→</div>
+      <div class="manifestStage manifestRace">
+        <span class="manifestKicker">02 · GIAI ĐOẠN THỰC CHIẾN</span>
+        <strong>16/9–31/12/2026</strong>
+        <p>Sales Race · Thực chiến, tích KM, bứt tốc doanh số</p>
+      </div>
+    </div>
+  </div>
+</div></div>
 
 
 <section id="journey" class="trainingShowcase">
@@ -641,7 +686,7 @@ html{scroll-behavior:smooth}
 <div class="card more"><div class="ci">🔒</div><h3>Tactic Bí Mật</h3><p><b>[SẮP MỞ]</b><br>Thử thách nhân đôi sẽ xuất hiện bất ngờ!</p><div class="points">??? KM</div></div></div></div></section>
 
 <section id="rank"><div class="w dashboard">
-<div class="box"><h3>BẢNG XẾP HẠNG TOP SALE</h3><div class="tabs"><span class="tab active">TOP KM</span><span class="tab">TOP TĂNG TỐC</span></div>
+<div class="box"><h3>BẢNG XẾP HẠNG TOP RUNNER</h3><div class="tabs"><span class="tab active">TOP KM</span><span class="tab">TOP TĂNG TỐC</span></div>
 <div id="leaderboardRows"><p class="muted">Đang tải bảng xếp hạng…</p></div></div>
 
 <div class="box join" id="join"><h3>CẬP NHẬT KẾT QUẢ<br>QUA TELEGRAM BOT</h3><p>Quét mã QR để đăng ký thử thách và cập nhật doanh số realtime.</p><a class="qr qrLive" href="https://t.me/ContentFirstMarathon_bot" target="_blank" rel="noopener" aria-label="Quét QR hoặc mở Content First Marathon Bot"><img src="content-first-marathon-bot-qr.png" alt="QR Telegram @ContentFirstMarathon_bot"></a><a class="pill" href="https://t.me/ContentFirstMarathon_bot" target="_blank" rel="noopener">✈ Mở Telegram Bot</a><p>{Hướng dẫn chi tiết →}</p></div>
@@ -653,7 +698,7 @@ html{scroll-behavior:smooth}
 <div class="rewardItem"><i>🚀</i><b>Ưu tiên tham gia các dự án chiến lược</b></div></div>
 </div></section>
 
-<div class="datebar"><div class="w dateIn"><div class="calendar">🗓️</div><div class="dateText"><b>TRAINING: 12/8–15/9/2026　 |　 SALES RACE: 16/9–31/12/2026</b><br><span>Trang bị sẵn sàng - bứt tốc ngay!</span></div><a class="pill orange" href="#join">ĐĂNG KÝ NGAY →</a></div></div>
+<div class="datebar"><div class="w dateIn"><div class="calendar">🗓️</div><div class="dateText"><b>TRAINING: 21/8–16/9/2026　 |　 SALES RACE: 16/9–31/12/2026</b><br><span>Trang bị sẵn sàng - bứt tốc ngay!</span></div><a class="pill orange" href="#join">ĐĂNG KÝ NGAY →</a></div></div>
 </main><footer><div class="w">Athena CM · Content First Marathon · V6.14-STABLE-COPY · BXH dùng trực tiếp dữ liệu KM đã duyệt từ KMLog.</div></footer>
 <a class="mobile" href="#join">ĐĂNG KÝ NGAY →</a>
 
