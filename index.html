@@ -298,7 +298,7 @@ html{scroll-behavior:smooth}
 }
 
 
-/* ===== V6.15 · TRAINING CARD UX ===== */
+/* ===== V6.16 · TRAINING CARD UX ===== */
 .trainingShowcase{padding:62px 0 54px;background:#fffaf0}
 .trainingPanel{
   position:relative;overflow:hidden;
@@ -414,7 +414,7 @@ html{scroll-behavior:smooth}
 }
 
 
-/* V6.15 · training micro-copy */
+/* V6.16 · training micro-copy */
 .trainingPill{white-space:nowrap}
 @media(max-width:1200px){
   .trainingPill{font-size:7.3px;letter-spacing:0}
@@ -456,7 +456,7 @@ html{scroll-behavior:smooth}
 </style>
 
 <style>
-/* V6.15 MOBILE TACTIC SWIPE — desktop giữ nguyên 4×2 */
+/* V6.16 MOBILE TACTIC SWIPE — desktop giữ nguyên 4×2 */
 .tacticSwipeHint{display:none}
 @media(max-width:600px){
   #tactics .head{margin-bottom:14px}
@@ -664,13 +664,13 @@ html{scroll-behavior:smooth}
 </div></section>
 
 <div class="datebar"><div class="w dateIn"><div class="calendar">🗓️</div><div class="dateText"><b>TRAINING: 12/8–15/9/2026　 |　 SALES RACE: 16/9–31/12/2026</b><br><span>Trang bị sẵn sàng - bứt tốc ngay!</span></div><a class="pill orange" href="#join">ĐĂNG KÝ NGAY →</a></div></div>
-</main><footer><div class="w">Athena CM · Content First Marathon · V6.15 · BXH dùng trực tiếp dữ liệu KM đã duyệt từ KMLog.</div></footer>
+</main><footer><div class="w">Athena CM · Content First Marathon · V6.16 · BXH dùng trực tiếp dữ liệu KM đã duyệt từ KMLog.</div></footer>
 <a class="mobile" href="#join">ĐĂNG KÝ NGAY →</a>
 
 <div class="syncStatus" id="syncStatus">DATA · chưa nối API</div>
 <script>
 const CFM = {
-  API_URL: "https://cfm-telegram-proxy.haitranduy.workers.dev/", // Web App /exec đang dùng cho CFM Bot
+  API_URL: "https://script.google.com/macros/s/AKfycbyj_RTJnkvhca0oDewH7Am0IgPZ3G1shV2G4wq2N8mNAGXd7frMo49qW5LgVVp2g1fWSg/exec", // Web App /exec đang dùng cho CFM Bot
   BOT_URL: "https://t.me/ContentFirstMarathon_bot",
   REFRESH_MS: 60000
 };
@@ -724,9 +724,8 @@ async function loadCFM(){
   try{
     status.textContent="DATA · đang đồng bộ…";
     const sep=CFM.API_URL.includes("?")?"&":"?";
-    const res=await fetch(CFM.API_URL+sep+"action=dashboard&t="+Date.now(),{
-      cache:"no-store",
-      headers:{"Accept":"application/json"}
+    const res=await fetch(CFM.API_URL+sep+"t="+Date.now(),{
+      cache:"no-store"
     });
     if(!res.ok) throw new Error("HTTP "+res.status);
     const d=await res.json();
