@@ -573,7 +573,7 @@ html{scroll-behavior:smooth}
       <div class="manifestStage manifestRace">
         <span class="manifestKicker">02 · GIAI ĐOẠN THỰC CHIẾN</span>
         <strong>20/9–31/12/2026</strong>
-        <p>Sales Race · Thực chiến, tích KM, bứt tốc doanh số</p>
+        <p>Sales Race · Thực chiến, tích Km, bứt tốc doanh số</p>
       </div>
     </div>
   </div>
@@ -712,13 +712,13 @@ const CFM = {
 
 function esc(v){return String(v ?? "").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));}
 function setText(id,v){const e=document.getElementById(id); if(e)e.textContent=v;}
-function formatKMValue(km){
+function formatKmValue(km){
   km=Number(km||0);
-  if(km>0 && km<1) return Math.round(km*1000)+"M";
-  return (Number.isInteger(km)?km:km.toFixed(1))+"KM";
+  if(km>0 && km<1) return Math.round(km*1000)+"m";
+  return (Number.isInteger(km)?km:km.toFixed(1))+"Km";
 }
-function rowKM(r){
-  const direct=r?.km ?? r?.totalKM;
+function rowKm(r){
+  const direct=r?.km ?? r?.totalKm;
   return Number(direct||0);
 }
 function buildNameMap(d){
@@ -749,7 +749,7 @@ function renderLeaderboard(rows,nameMap={}){
     <div class="row">
       <div class="rank">${i+1}</div>
       <div class="person"><b>${esc(saleDisplayName(r,nameMap))}</b><span>${esc(r.team||"")}</span></div>
-      <div class="score"><b>${esc(formatKMValue(rowKM(r)))}</b></div>
+      <div class="score"><b>${esc(formatKmValue(rowKm(r)))}</b></div>
     </div>`).join("");
   setTimeout(animateVisibleNumbers,40);
 }
@@ -791,7 +791,7 @@ function animateNumber(el, target, suffix="", duration=900){
 function animateVisibleNumbers(){
   document.querySelectorAll('.metric strong, .score, .points').forEach(el=>{
     const txt=el.textContent.trim();
-    const m=txt.match(/^(\+?)([0-9]+(?:[.,][0-9]+)?)(K|KM|M)?$/i);
+    const m=txt.match(/^(\+?)([0-9]+(?:[.,][0-9]+)?)(K|Km|m)?$/i);
     if(!m || el.dataset.counted) return;
     el.dataset.counted='1';
     const prefix=m[1]||''; const unit=m[3]||'';
